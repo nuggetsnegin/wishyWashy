@@ -14,22 +14,32 @@ class CreateWish extends Component {
     };
 }
 
-// componentDidMount(){
-// 	axios({
-// 		method: 'get',
-// 		url: ' https://neutrinoapi.net/bad-word-filter',
-// 		params:{
-// 			key: '63FtVBHP3otlWrWEvQCcJiADFDXVroOqDPgjJHHuWPYWRC4J',
-// 			content: this.state.wishInput,
-// 			'censor-character': 'u'
-// 		}
-// 	}).then((data) =>{
+checkBadWords = wishInput =>{
 
-// 		this.setState({
-// 			wishInput: data.
-// 		})
-// 	})
-// }
+    axios({
+		method: 'get',
+		url: 'https://neutrinoapi.net/bad-word-filter',
+		params:{
+            apiKey: '15xA8PV5LlmVv9CxQnsi2cxdFdFw7RwrvpPskBgRbo5XWGfh',
+            userId:'nuggetnegin',
+            content: wishInput,
+            format: 'json',
+            censorCharacter: '*'
+		}
+	}).then((data) =>{
+        // TODO: Figure out how to return this properly, currently undefined
+            if(data && data.data["censored-content"]){
+                const censoredWishInput = data.data["censored-content"];
+                this.setState({
+                    wishInput: censoredWishInput
+                });
+                return censoredWishInput;
+            }
+            else{
+                return wishInput; /*fall back if api blocked*/
+            }
+    })    
+}
 
 handleInput = event =>{
     this.setState({
@@ -43,11 +53,13 @@ handleSubmit = event =>{
     event.preventDefault(); 
 
     /*grabbing the current state of wish and calling checkBadwords and setting it to a new variable called wishToBeAdded also setting current state of support to support to push to db*/
+    // console.log('state wish input:', this.state.wishInput);
     const wishToBeAdded = this.validateInput(this.state.wishInput);
+    // console.log('wish to be added', wishToBeAdded)
 
     /*support is always 0 on creation so maybe not necessary*/
     const support = this.state.support;
-     
+
      if(wishToBeAdded){ /*if object exists then we push to db*/
         const dbRef = firebase.database().ref(); /*db reference*/
          dbRef.push({
@@ -60,18 +72,20 @@ handleSubmit = event =>{
 
     }
     else{
-        console.log('error message');
+        console.log('i fucked up error message');
     }
 
 }
 
 
-validateInput = (wishInput) =>{
+validateInput = wishInput =>{
     /*check if input not empty*/
-    if (this.state.wishInput !== "") {
+    if (wishInput !== "") {
         /*check if wish under char length*/
-        if(this.state.wishInput.length < 120){
-            return wishInput;
+        if(wishInput.length < 120){
+            const checkedBadWords = this.checkBadWords(wishInput);
+            console.log(checkedBadWords);
+            return checkedBadWords;
         }
         else{
             console.log('failed to validate input');
