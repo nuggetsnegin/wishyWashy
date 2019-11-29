@@ -12,27 +12,42 @@ class Support extends Component {
     }
     /* DbKey and Support => Update Wish of this dbKey with this support number*/
 
+    // componentDidMount(){
+    //     const dbRef = firebase.database().ref();
+    //     const{wishId} = this.props;
+    //     dbRef.child(wishId).update({support: this.state.support});
+
+    //     this.setState({
+    //         support: this.props.support +1
+    //     });
+
+    //     console.log('support state', this.state.support);
+    //     console.log('support props', this.props.support);
+    // }
+
+
     supporting = () =>{
+        
+        const dbRef = firebase.database().ref();
         const{wishId} = this.props;
+        dbRef.child(wishId).update({support: this.state.support});
+
         this.setState({
             support: this.props.support +1
         });
 
-        const dbRef = firebase.database().ref();
-        dbRef.child(wishId).update({support: this.state.support});
-        console.log(wishId);
         console.log('support state', this.state.support);
         console.log('support props', this.props.support);
+    
     }
 
     /*rendering support number and button*/
     render() {
         /*only need theWishId and support to increment support #*/
-       
         console.log('render');
         return(
             <div className="displaySupport">
-                <button onClick={this.supporting}>
+                <button className="supportButton" onClick={this.supporting}>
                     💗{this.state.support}
                 </button>
             </div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import CreateWish from './CreateWish';
 import DisplayWishes from './DisplayWishes';
+import Header from './Header';
 
 class App extends Component {
 
@@ -9,11 +10,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>Wishy Washy</h1>
+        <Header />
+        <main>
           <CreateWish />
           <DisplayWishes />
-        </header>
+        </main>
       </div>
     );
 

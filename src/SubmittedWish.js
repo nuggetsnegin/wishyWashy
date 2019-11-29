@@ -9,7 +9,7 @@ class SubmittedWish extends Component {
      
         return(
             <div className="idk">
-                <li>{wish} {support}</li>
+                <li>{wish}</li>
                 <Support 
                     support={support}
                     key={wishId}

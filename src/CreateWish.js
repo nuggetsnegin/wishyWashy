@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import firebase from "./firebase.js";
 import axios from "axios";
 import "./App.css";
+import Qs from 'qs';
 
 class CreateWish extends Component {
   constructor() {
@@ -16,29 +17,40 @@ class CreateWish extends Component {
 
 checkBadWords = wishInput =>{
 
-    axios({
-		method: 'get',
-		url: 'https://neutrinoapi.net/bad-word-filter',
-		params:{
-            apiKey: '15xA8PV5LlmVv9CxQnsi2cxdFdFw7RwrvpPskBgRbo5XWGfh',
-            userId:'nuggetnegin',
-            content: wishInput,
-            format: 'json',
-            censorCharacter: '*'
-		}
-	}).then((data) =>{
-        // TODO: Figure out how to return this properly, currently undefined
-            if(data && data.data["censored-content"]){
-                const censoredWishInput = data.data["censored-content"];
-                this.setState({
-                    wishInput: censoredWishInput
-                });
-                return censoredWishInput;
-            }
-            else{
-                return wishInput; /*fall back if api blocked*/
-            }
-    })    
+    // axios({
+    //     method: 'get',
+    //     url: 'http://proxy.hackeryou.com',
+    //     dataResponse: 'json',
+    //     paramsSerializer: function(params) {
+    //         return Qs.stringify(params, {arrayFormat: 'brackets'})
+    //     },
+	// 	params:{
+    //         reqUrl: 'https://aws.neutrinoapi.net',
+    //         apiKey: '15xA8PV5LlmVv9CxQnsi2cxdFdFw7RwrvpPskBgRbo5XWGfh',
+    //         userId:'nuggetnegin',
+    //         outputFormat: 'JSON',
+    //         outputCase: 'camel',
+    //         content: wishInput,
+    //         censorCharacter: '*',
+    //         proxyHeaders: {
+    //             'header_params': 'value'
+    //           },
+    //         xmlToJSON: false
+	// 	}
+	// }).then((data) =>{
+    //     // TODO: Figure out how to return this properly, currently undefined
+    //     console.log('waht will this print', data);
+    //         if(data && data.data["censored-content"]){
+    //             const censoredWishInput = data.data["censored-content"];
+    //             this.setState({
+    //                 wishInput: censoredWishInput
+    //             });
+                
+    //         }
+    //         else{
+    //             return wishInput; /*fall back if api blocked*/
+    //         }
+    // })    
 }
 
 handleInput = event =>{
