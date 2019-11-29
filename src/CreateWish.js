@@ -5,6 +5,7 @@ import firebase from "./firebase.js";
 import axios from "axios";
 import "./App.css";
 import Qs from 'qs';
+import LeoProfanity from 'leo-profanity';
 
 class CreateWish extends Component {
   constructor() {
@@ -17,40 +18,15 @@ class CreateWish extends Component {
 
 checkBadWords = wishInput =>{
 
-    axios({
-        method: 'get',
-        url: 'http://proxy.hackeryou.com',
-        dataResponse: 'json',
-        paramsSerializer: function(params) {
-            return Qs.stringify(params, {arrayFormat: 'brackets'})
-        },
-		params:{
-            reqUrl: 'https://neutrinoapi.net/bad-word-filter',
-            apiKey: '15xA8PV5LlmVv9CxQnsi2cxdFdFw7RwrvpPskBgRbo5XWGfh',
-            userId:'nuggetnegin',
-            outputFormat: 'JSON',
-            content: wishInput,
-            censorCharacter: '*',
-            proxyHeaders: {
-                'header_params': 'value'
-              },
-            xmlToJSON: false
-		}
-	}).then((data) =>{
-        // TODO: Figure out how to return this properly, currently undefined
-        console.log('waht will this print', data);
-            if(data && data.data["censored-content"]){
-                const censoredWishInput = data.data["censored-content"];
+    const filter = require('leo-profanity');
+    const cleanedUp = filter.clean(wishInput, '💖');
 
-                this.setState({
-                    wishInput: censoredWishInput
-                });
-                
-            }
-            else{
-                return wishInput; /*fall back if api blocked*/
-            }
-    })    
+    this.setState({
+        wishInput: cleanedUp
+    });
+
+    console.log('cleaned up', cleanedUp);
+
 }
 
 handleInput = event =>{
@@ -64,17 +40,17 @@ handleSubmit = event =>{
     event.preventDefault(); 
 
     /*grabbing the current state of wish and calling checkBadwords and setting it to a new variable called wishToBeAdded also setting current state of support to support to push to db*/
-    // console.log('state wish input:', this.state.wishInput);
-    const wishToBeAdded = this.validateInput(this.state.wishInput);
-    // console.log('wish to be added', wishToBeAdded)
+
+    this.validateInput(this.state.wishInput);
+
 
     /*support is always 0 on creation so maybe not necessary*/
     const support = this.state.support;
-
-     if(wishToBeAdded){ /*if object exists then we push to db*/
+    console.log(this.state);
+     if(this.state.wishInput){ /*if object exists then we push to db*/
         const dbRef = firebase.database().ref(); /*db reference*/
          dbRef.push({
-             wish: wishToBeAdded,
+             wish: this.state.wishInput,
              support: support
          });
          this.setState({
@@ -95,7 +71,7 @@ validateInput = wishInput =>{
         /*check if wish under char length*/
         if(wishInput.length < 120){
             this.checkBadWords(wishInput);
-            console.log(this.state.wishInput);
+            console.log('goes into wishinput lenght if', this.state.wishInput);
         }
         else{
             console.log('failed to validate input');
