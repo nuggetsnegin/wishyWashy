@@ -17,47 +17,46 @@ class CreateWish extends Component {
 
 checkBadWords = wishInput =>{
 
-    // axios({
-    //     method: 'get',
-    //     url: 'http://proxy.hackeryou.com',
-    //     dataResponse: 'json',
-    //     paramsSerializer: function(params) {
-    //         return Qs.stringify(params, {arrayFormat: 'brackets'})
-    //     },
-	// 	params:{
-    //         reqUrl: 'https://aws.neutrinoapi.net',
-    //         apiKey: '15xA8PV5LlmVv9CxQnsi2cxdFdFw7RwrvpPskBgRbo5XWGfh',
-    //         userId:'nuggetnegin',
-    //         outputFormat: 'JSON',
-    //         outputCase: 'camel',
-    //         content: wishInput,
-    //         censorCharacter: '*',
-    //         proxyHeaders: {
-    //             'header_params': 'value'
-    //           },
-    //         xmlToJSON: false
-	// 	}
-	// }).then((data) =>{
-    //     // TODO: Figure out how to return this properly, currently undefined
-    //     console.log('waht will this print', data);
-    //         if(data && data.data["censored-content"]){
-    //             const censoredWishInput = data.data["censored-content"];
-    //             this.setState({
-    //                 wishInput: censoredWishInput
-    //             });
+    axios({
+        method: 'get',
+        url: 'http://proxy.hackeryou.com',
+        dataResponse: 'json',
+        paramsSerializer: function(params) {
+            return Qs.stringify(params, {arrayFormat: 'brackets'})
+        },
+		params:{
+            reqUrl: 'https://neutrinoapi.net/bad-word-filter',
+            apiKey: '15xA8PV5LlmVv9CxQnsi2cxdFdFw7RwrvpPskBgRbo5XWGfh',
+            userId:'nuggetnegin',
+            outputFormat: 'JSON',
+            content: wishInput,
+            censorCharacter: '*',
+            proxyHeaders: {
+                'header_params': 'value'
+              },
+            xmlToJSON: false
+		}
+	}).then((data) =>{
+        // TODO: Figure out how to return this properly, currently undefined
+        console.log('waht will this print', data);
+            if(data && data.data["censored-content"]){
+                const censoredWishInput = data.data["censored-content"];
+
+                this.setState({
+                    wishInput: censoredWishInput
+                });
                 
-    //         }
-    //         else{
-    //             return wishInput; /*fall back if api blocked*/
-    //         }
-    // })    
+            }
+            else{
+                return wishInput; /*fall back if api blocked*/
+            }
+    })    
 }
 
 handleInput = event =>{
     this.setState({
         wishInput: event.target.value
     });
-    console.log(event.target.value);
 }
 
 handleSubmit = event =>{
@@ -95,9 +94,8 @@ validateInput = wishInput =>{
     if (wishInput !== "") {
         /*check if wish under char length*/
         if(wishInput.length < 120){
-            const checkedBadWords = this.checkBadWords(wishInput);
-            console.log(checkedBadWords);
-            return checkedBadWords;
+            this.checkBadWords(wishInput);
+            console.log(this.state.wishInput);
         }
         else{
             console.log('failed to validate input');

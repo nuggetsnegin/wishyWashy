@@ -11,30 +11,17 @@ class Support extends Component {
         }
     }
     /* DbKey and Support => Update Wish of this dbKey with this support number*/
-
-    // componentDidMount(){
-    //     const dbRef = firebase.database().ref();
-    //     const{wishId} = this.props;
-    //     dbRef.child(wishId).update({support: this.state.support});
-
-    //     this.setState({
-    //         support: this.props.support +1
-    //     });
-
-    //     console.log('support state', this.state.support);
-    //     console.log('support props', this.props.support);
-    // }
-
-
     supporting = () =>{
         
         const dbRef = firebase.database().ref();
         const{wishId} = this.props;
-        dbRef.child(wishId).update({support: this.state.support});
-
+        const newSupporVal = this.state.support + 1;
         this.setState({
-            support: this.props.support +1
+            support: newSupportVal
         });
+
+        dbRef.child(wishId).update({support: newSupportVal});
+
 
         console.log('support state', this.state.support);
         console.log('support props', this.props.support);
