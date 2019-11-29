@@ -15,7 +15,7 @@ class Support extends Component {
         
         const dbRef = firebase.database().ref();
         const{wishId} = this.props;
-        const newSupporVal = this.state.support + 1;
+        const newSupportVal = this.state.support + 1;
         this.setState({
             support: newSupportVal
         });
