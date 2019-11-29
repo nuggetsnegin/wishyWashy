@@ -1,6 +1,6 @@
 /*DISPLAYWISHES.JS*/
 import React, { Component } from "react";
-import SubmitedWish from "./SubmittedWish";
+import SubmittedWish from "./SubmittedWish";
 import firebase from "./firebase.js";
 
 class DisplayWishes extends Component {
@@ -12,6 +12,7 @@ class DisplayWishes extends Component {
         }
     }
 
+    /*connecting to db*/
     componentDidMount(){
         const dbRef = firebase.database().ref();
 
@@ -19,6 +20,7 @@ class DisplayWishes extends Component {
             const dbWishes = snapshot.val();
             const displayWishes = []; /*using thsi to display shit*/
 
+            /*for in loop to grab db info and put it into an object*/
             for (let key in dbWishes){
                 const wishObject = {
                     wishId: key,
@@ -39,22 +41,24 @@ class DisplayWishes extends Component {
         const wishes = this.state.wishes;
 
         return(
-        // const wishes = this.state.wishes;
-        // <div>
-        // for wish in this.state.wishes.map(
-        // <SubmitedWish wishInput=wishInput, support=support, key=dbKey/>)
-        // </div> 
         <div className="wishDisplay">
             <ul>
+           {/* map through object so we can render it */}
             {wishes.map((wish, i) => {
                 return (
-                    <li key={i}>{wish.wish} {wish.support}</li>
+                    /*passing props to submittedWish component from wishObject*/
+                    <SubmittedWish
+                        key={i}
+                        wishId={wish.wishId}
+                        wish={wish.wish}
+                        support={wish.support}
+                    />
                 );
             })}
             </ul>
 
         </div>
-        )
+        );
     }
 }
 
