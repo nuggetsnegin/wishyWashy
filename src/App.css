@@ -200,7 +200,11 @@ body {
 }
 
 .App {
-  background-color: rgb(56, 59, 109);
+  background: linear-gradient(359deg, #3f4544, #40416c, #000000);
+  background-size: 600% 600%;
+  -webkit-animation: background 10s ease infinite;
+  -moz-animation: background 10s ease infinite;
+  animation: background 10s ease infinite;
 }
 
 header {
@@ -312,7 +316,7 @@ li {
 
 footer {
   height: 15vh;
-  background-color: rgb(56, 59, 109);
+  opacity: 0.8;
   color: white;
   text-align: center;
 }
@@ -603,5 +607,39 @@ footer {
   75% {
     -webkit-transform: translateX(-6px) rotate(-1.2deg);
     transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+
+@-webkit-keyframes background {
+  0% {
+    background-position: 46% 0%;
+  }
+  50% {
+    background-position: 55% 100%;
+  }
+  100% {
+    background-position: 46% 0%;
+  }
+}
+@-moz-keyframes background {
+  0% {
+    background-position: 46% 0%;
+  }
+  50% {
+    background-position: 55% 100%;
+  }
+  100% {
+    background-position: 46% 0%;
+  }
+}
+@keyframes background {
+  0% {
+    background-position: 46% 0%;
+  }
+  50% {
+    background-position: 55% 100%;
+  }
+  100% {
+    background-position: 46% 0%;
   }
 }
