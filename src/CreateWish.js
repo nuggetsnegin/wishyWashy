@@ -16,10 +16,34 @@ class CreateWish extends Component {
     };
 }
 
-checkBadWords = wishInput =>{
+componentDidMount(){
+        axios ({
+            method: 'GET',
+            url: 'https://proxy.hackeryou.com',
+            dataResponse: 'JSON',
+            paramsSerializer: function(params) {
+              return Qs.stringify(params, {arrayFormat: 'brackets'})
+            },
+            params: {
+              reqUrl: 'https://nookipedia.com/w/api.php?action=query&titles=Bugs/Animal_Crossing:_New_Leaf&prop=revisions&rvprop=content&format=json',
+              proxyHeaders: {
+                'header_params': 'value',
+              },
+              xmlToJSON: false,
+            }
+        }).then((result) =>{
+                console.log(result);
+            });
+
+}
+
+
+checkBadWords = async (wishInput) =>{
 
     const filter = require('leo-profanity');
-    const cleanedUp = filter.clean(wishInput, '💖');
+    let cleanedUp = await filter.clean(wishInput, '💖');
+
+    let replace = wishInput + 'poo';
 
     this.setState({
         wishInput: cleanedUp
@@ -35,14 +59,29 @@ handleInput = event =>{
     });
 }
 
+
+validateInput = () =>{
+    /*check if input not empty*/
+    if (this.state.wishInput !== "") {
+        /*check if wish under char length*/
+        if(this.state.wishInput.length < 120){
+            this.checkBadWords(this.state.wishInput);
+            console.log('goes into wishinput lenght if', this.state.wishInput);
+        }
+        else{
+            console.log('failed to validate input');
+            return false; /*? error message div?*/
+        }
+    }
+}
+
 handleSubmit = event =>{
     /*stop refresh on button click*/
     event.preventDefault(); 
 
     /*grabbing the current state of wish and calling checkBadwords and setting it to a new variable called wishToBeAdded also setting current state of support to support to push to db*/
 
-    this.validateInput(this.state.wishInput);
-
+    this.validateInput();
 
     /*support is always 0 on creation so maybe not necessary*/
     const support = this.state.support;
@@ -64,21 +103,6 @@ handleSubmit = event =>{
 
 }
 
-
-validateInput = wishInput =>{
-    /*check if input not empty*/
-    if (wishInput !== "") {
-        /*check if wish under char length*/
-        if(wishInput.length < 120){
-            this.checkBadWords(wishInput);
-            console.log('goes into wishinput lenght if', this.state.wishInput);
-        }
-        else{
-            console.log('failed to validate input');
-            return false; /*? error message div?*/
-        }
-    }
-}
 
 render(){
     return(
