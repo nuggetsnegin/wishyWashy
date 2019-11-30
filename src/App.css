@@ -158,7 +158,7 @@ footer{
   -moz-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
   animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
 
-  left: -5%;
+  left: -0.2%;
   top: 5%;
 
   -webkit-transform: scale(1.6);

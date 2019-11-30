@@ -30,13 +30,32 @@ class DisplayWishes extends Component {
                 displayWishes.push(wishObject);
             }
 
+            const mostRecentWish = displayWishes.reverse().shift(); /*needed to show the users first wish on screen and not have it randomized*/
+            console.log(displayWishes)
+            const randomWishes = this.shuffleArray(displayWishes);
+
+            /*grabs the most recent wish and 9 random ones using destructuring so we dont return an object*/
+            const combinedWishes = [mostRecentWish, ...randomWishes.slice(0,9)];
+         
             this.setState({
-                wishes: displayWishes.reverse() /*so new wish displays at the top*/
+                wishes: combinedWishes /*recent users wish and 9 random*/
             });
         });
     }
 
+    shuffleArray=(wishesArray)=>{
+        for(let i = wishesArray.length -1; i > 0; i--){
+            const randomized = Math.floor(Math.random() * i + 1);
+            [wishesArray[i], wishesArray[randomized]] = [wishesArray[randomized], wishesArray[i]];
+            console.log(wishesArray[randomized])
+        }
+        return wishesArray;
+    }
+
+    
+
     render(){
+
         /*for assigning random x1-x10 class for bubble animations on user wishes*/
         const bubbleClasses = ['x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10'];
         const wishes = this.state.wishes;
@@ -46,13 +65,13 @@ class DisplayWishes extends Component {
             <ul>
            {/* map through object so we can render it */}
             {wishes.map((wish, i) => {
-                console.log(wish);
+   
                 const bubbleRandomizer = Math.floor(Math.random() * 10);
-                console.log(bubbleClasses[bubbleRandomizer]);
+   
                 return (
                     /*passing props to submittedWish component from wishObject*/
                     <SubmittedWish
-                        animationClass={bubbleClasses[bubbleRandomizer]}
+                        animationClass={bubbleClasses[i]}
                         key={i}
                         wishId={wish.wishId}
                         wish={wish.wish}

@@ -9,7 +9,7 @@ class SubmittedWish extends Component {
      
         return(
             <div className={animationClass +" " + "bubblePosition"} id={wishId}>
-                <li>{wish}</li>
+                <li className="wobble">{wish}</li>
                 <Support 
                     support={support}
                     key={wishId}
