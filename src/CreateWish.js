@@ -13,7 +13,8 @@ class CreateWish extends Component {
     super();
     this.state = {
       wishInput: "",
-      support: 0
+      support: 0,
+      characterRemaining: 120
     };
 }
 
@@ -53,7 +54,7 @@ checkBadWords = () =>{
 
 validateInput = (wishInput) =>{
     /*check if input not empty and *check if wish under char length*/
-        if(this.state.wishInput !== "" && this.state.wishInput.length < 120){
+        if(this.state.wishInput !== ""){
            return wishInput;
         }
         else{
@@ -94,11 +95,6 @@ handleSubmit = event =>{
 }
 
 
-handleChange(event){
-    const wishInput = event.target.value;
-
-}
-
 render(){
     return(
         <div className="input">
@@ -107,11 +103,13 @@ render(){
 
                 <textarea
                     rows="8"
+                    maxLength={120}
                     type="text"
                     value={this.state.wishInput}
                     onChange={this.handleInput}
                     placeholder="I wish I could own 3 cats someday!"
                 />
+                <p>Wish Words Remaining: {this.state.wishInput.length}/120</p>
 
             <button className="wishButton" type="submit">Submit Wish</button>
             </form>
