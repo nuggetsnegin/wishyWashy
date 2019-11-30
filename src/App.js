@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css';
 import CreateWish from './components/CreateWish';
 import DisplayWishes from './components/DisplayWishes';
 import Footer from './components/Footer';

@@ -1,7 +1,7 @@
 /* DISPLAYWISHES.JS */
 import React, { Component } from 'react'
 import SubmittedWish from './SubmittedWish'
-import firebase from './firebase.js'
+import firebase from '../firebase.js'
 
 class DisplayWishes extends Component {
   constructor () {

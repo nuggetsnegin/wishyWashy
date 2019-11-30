@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import firebase from './firebase.js'
+import firebase from '../firebase.js'
 /* SUPPORT.JS - checking how many times a support has been issued (user clicks!) and rendering the result */
 
 class Support extends Component {

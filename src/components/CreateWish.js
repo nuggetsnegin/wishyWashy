@@ -1,8 +1,7 @@
 /* CREATEWISH.JS COMPONENT */
 /* Create a single 'wish' and loading it to the database. Rendering the text input field. */
 import React, { Component } from 'react'
-import firebase from './firebase.js'
-import '../App.css'
+import firebase from '../firebase.js'
 
 const filter = require('leo-profanity') /* for filtering bad words */
 
