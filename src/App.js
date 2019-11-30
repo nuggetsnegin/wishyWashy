@@ -24,10 +24,15 @@ class App extends Component {
 
 
         <Header />
-        <main>
-          <CreateWish />
-          <DisplayWishes />
-        </main>
+        <div className="wrapper">
+          <main>
+            <div className="introduction">
+              <p>Hi there! I see you want to make a wish well.. just type one in!</p>
+            </div>
+            <CreateWish />
+            <DisplayWishes />
+          </main>
+        </div>
       </div>
     );
 

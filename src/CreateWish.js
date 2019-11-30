@@ -102,7 +102,7 @@ render(){
                 <label htmlFor="wishInput"></label>
 
                 <textarea
-                    rows="8"
+                    rows="4"
                     maxLength={120}
                     type="text"
                     value={this.state.wishInput}
