@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 import firebase from "./firebase.js";
 import axios from "axios";
-import "./App.css";
+import "../App.css";
 import Qs from 'qs';
 
 const filter = require('leo-profanity'); /*for filtering bad words*/
@@ -102,7 +102,7 @@ render(){
                 <label htmlFor="wishInput"></label>
 
                 <textarea
-                    rows="4"
+                    rows="6"
                     maxLength={120}
                     type="text"
                     value={this.state.wishInput}

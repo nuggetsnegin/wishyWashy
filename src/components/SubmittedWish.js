@@ -8,7 +8,7 @@ class SubmittedWish extends Component {
         const{wishId, wish, support} = this.props; /*destructing props from displayWishes*/
      
         return(
-            <div className="idk">
+            <div className="x1" id={wishId}>
                 <li>{wish}</li>
                 <Support 
                     support={support}
