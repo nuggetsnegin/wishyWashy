@@ -28,7 +28,6 @@ class DisplayWishes extends Component {
                     support: dbWishes[key].support
                 }
                 displayWishes.push(wishObject);
-                console.log(wishObject);
             }
 
             this.setState({
@@ -38,6 +37,8 @@ class DisplayWishes extends Component {
     }
 
     render(){
+        /*for assigning random x1-x10 class for bubble animations on user wishes*/
+        const bubbleClasses = ['x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10'];
         const wishes = this.state.wishes;
 
         return(
@@ -45,9 +46,13 @@ class DisplayWishes extends Component {
             <ul>
            {/* map through object so we can render it */}
             {wishes.map((wish, i) => {
+                console.log(wish);
+                const bubbleRandomizer = Math.floor(Math.random() * 10);
+                console.log(bubbleClasses[bubbleRandomizer]);
                 return (
                     /*passing props to submittedWish component from wishObject*/
                     <SubmittedWish
+                        animationClass={bubbleClasses[bubbleRandomizer]}
                         key={i}
                         wishId={wish.wishId}
                         wish={wish.wish}

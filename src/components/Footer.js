@@ -7,7 +7,7 @@ class Footer extends Component {
 
     return (
         <footer className="footer">
-          <p>🐟Made with big wishes by Negin Sauermann ©️ 2019🐟</p>
+          <p><span role="img" aria-label="fish emoji">🐟</span>Made with big wishes by Negin Sauermann ©️ 2019<span role="img" aria-label="fish emoji">🐟</span></p>
         </footer>
     );
   }

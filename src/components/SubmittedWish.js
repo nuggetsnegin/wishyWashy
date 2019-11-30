@@ -5,10 +5,10 @@ import Support from "./Support";
 class SubmittedWish extends Component {
 
     render(){
-        const{wishId, wish, support} = this.props; /*destructing props from displayWishes*/
+        const{wishId, wish, support, animationClass} = this.props; /*destructing props from displayWishes*/
      
         return(
-            <div className="x1" id={wishId}>
+            <div className={animationClass +" " + "bubblePosition"} id={wishId}>
                 <li>{wish}</li>
                 <Support 
                     support={support}

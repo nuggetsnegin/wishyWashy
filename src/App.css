@@ -15,8 +15,13 @@ html{
 }
 
 .wrapper{
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
+  overflow-x: hidden;
+}
+
+p{
+  color: white;
 }
 
 body{
@@ -26,28 +31,22 @@ body{
 }
 
 .App{
-  display: grid;
   background-color: rgb(56, 59, 109);
-  /* background-image: url(../src/assets/pattern.png); */
-  /* background-image: url(../src/assets/wave.svg);
-  background-size: cover; */
 }
 
 header{
   min-height: 15vh;
-  background-color: rgb(56, 59, 109);
   color: white;
   text-align: center;
+  z-index: 3;
 }
 
 main {
-  display: grid;
   min-height: 70vh;
-  /* background-color: rgb(228, 135, 151);
-  grid-template-columns: repeat(2, min-content);
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
   grid-template-areas:
-  "wishInput wish wish"
-  "wishInput wish wish" */
+  "displayWish createWish displayWish";
 }
 
 h1 {
@@ -64,15 +63,18 @@ h1:after {
 	color: rgba(29, 153, 255, 0.192);   
 }
 
+button{
+  border: none;
+  background-color: pink;
+  border-radius: 25px;
+}
+
 /*INPUT BOX - WISH INPUT*/
 .input{
   grid-area: wishInput;
   padding: 10px;
-  z-index: 3;
-}
-
-.wishDisplay{
-  grid-area: wish;
+  z-index: 2;
+  grid-area: createWish;
 }
 
 textarea{
@@ -95,26 +97,30 @@ textarea{
 /*WISH DISPLAY*/
 ul{
   list-style: none;
-  padding-left: 0;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: auto;
-  gap: 10px;
-  overflow: hidden;
+  grid-template-columns: repeat(4, min-content);
+}
+
+.bubblePosition{
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  max-height: 200px;
+  max-width: 250px;
 }
 
 li{
-  /* background-image: url(../src/assets/blueStationary.png); */
-  background-size: cover;
+  /* background-size: cover; */
   background-color: rgba(169, 160, 245, 0.178);
-  text-decoration: underline;
   font-size: 2rem;
-  padding: 20px;
+  padding: 32px;
   border-radius: 50%;
   color: white;
   min-height: 200px;
   min-width: 250px;
-  border: 3px dashed rgb(46, 36, 105);
 }
 
 .wishDisplay {
@@ -124,66 +130,28 @@ li{
   right: 0;
   top: 0;
   z-index: 1;
+  grid-area: displayWish;
 }
 
-/* WISH BUBBLE KEYFRAMES
-  src: https://codepen.io/Mark_Bowley/pen/mEtqj */
+/*SUPPORT HEARTS*/
 
-@-webkit-keyframes animateBubble {
-  0% {
-      margin-top: 1000px;
-  }
-  100% {
-      margin-top: -100%;
-  }
+.supportButton{
+  background: transparent;
+  color: white;
 }
 
-@-moz-keyframes animateBubble {
-  0% {
-      margin-top: 1000px;
-  }
-  100% {
-      margin-top: -100%;
-  }
+footer{
+  height: 15vh;
+  background-color: rgb(56, 59, 109);
+  color: white;
+  text-align: center;
 }
 
-@keyframes animateBubble {
-  0% {
-      margin-top: 1000px;
-  }
-  100% {
-      margin-top: -100%;
-  }
+/*ANIMATIONS AND KEY FRAMES*/
+.wobble {
+	-webkit-animation: wobble 5s infinite both;
+	        animation: wobble 5s infinite both;
 }
-
-@-webkit-keyframes sideWays { 
-  0% { 
-      margin-left:0px;
-  }
-  100% { 
-      margin-left:50px;
-  }
-}
-
-@-moz-keyframes sideWays { 
-  0% { 
-      margin-left:0px;
-  }
-  100% { 
-      margin-left:50px;
-  }
-}
-
-@keyframes sideWays { 
-  0% { 
-      margin-left:0px;
-  }
-  100% { 
-      margin-left:50px;
-  }
-}
-
-/* WISH BUBBLE ANIMATIONS */
 
 .x1 {
   -webkit-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
@@ -193,10 +161,10 @@ li{
   left: -5%;
   top: 5%;
 
-  -webkit-transform: scale(0.6);
-  -moz-transform: scale(0.6);
-  transform: scale(0.6);
-  }
+  -webkit-transform: scale(1.6);
+  -moz-transform: scale(1.6);
+  transform: scale(1.6);
+}
 
 .x2 {
   -webkit-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
@@ -232,9 +200,9 @@ animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite a
 left: 20%;
 top: 0;
 
--webkit-transform: scale(0.9);
--moz-transform: scale(0.9);
-transform: scale(0.9);
+-webkit-transform: scale(1.9);
+-moz-transform: scale(1.9);
+transform: scale(1.9);
 }
 
 .x5 {
@@ -315,11 +283,125 @@ top: 80%;
 transform: scale(0.83);
 }
 
+/* WISH BUBBLE KEYFRAMES
+  src: https://codepen.io/Mark_Bowley/pen/mEtqj */
 
+  @-webkit-keyframes animateBubble {
+    0% {
+        margin-top: 1000px;
+    }
+    100% {
+        margin-top: -100%;
+    }
+  }
+  
+  @-moz-keyframes animateBubble {
+    0% {
+        margin-top: 1000px;
+    }
+    100% {
+        margin-top: -100%;
+    }
+  }
+  
+  @keyframes animateBubble {
+    0% {
+        margin-top: 1000px;
+    }
+    100% {
+        margin-top: -100%;
+    }
+  }
+  
+  @-webkit-keyframes sideWays { 
+    0% { 
+        margin-left:0px;
+    }
+    100% { 
+        margin-left:50px;
+    }
+  }
+  
+  @-moz-keyframes sideWays { 
+    0% { 
+        margin-left:0px;
+    }
+    100% { 
+        margin-left:50px;
+    }
+  }
+  
+  @keyframes sideWays { 
+    0% { 
+        margin-left:0px;
+    }
+    100% { 
+        margin-left:50px;
+    }
+  }
 
-footer{
-  height: 15vh;
-  background-color: rgb(56, 59, 109);
-  color: white;
-  text-align: center;
+  /* ----------------------------------------------
+ * Generated by Animista on 2019-11-30 12:37:5
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+@-webkit-keyframes wobble {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+            transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+            transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+            transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+            transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+            transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+@keyframes wobble {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+            transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+            transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+            transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+            transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+            transform: translateX(-6px) rotate(-1.2deg);
+  }
 }

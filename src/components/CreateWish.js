@@ -2,9 +2,9 @@
 /*Create a single 'wish' and loading it to the database. Rendering the text input field.*/
 import React, { Component } from "react";
 import firebase from "./firebase.js";
-import axios from "axios";
+// import axios from "axios";
 import "../App.css";
-import Qs from 'qs';
+// import Qs from 'qs';
 
 const filter = require('leo-profanity'); /*for filtering bad words*/
 

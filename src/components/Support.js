@@ -35,7 +35,7 @@ class Support extends Component {
         return(
             <div className="displaySupport">
                 <button className="supportButton" onClick={this.supporting}>
-                    💗{this.state.support}
+                    <span role="img" aria-label="heart emoji">💗</span>{this.state.support}
                 </button>
             </div>
         );
