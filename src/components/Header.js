@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
-import '../App.css';
+import React, { Component } from 'react'
+import '../App.css'
 
 class Header extends Component {
-
-  render(){
-
+  render () {
     return (
-        <header className="header">
-          <h1 className="knockout">Wishy Washy</h1>
-        </header>
-    );
+      <header className='header'>
+        <h1 className='knockout'>Wishy Washy</h1>
+      </header>
+    )
   }
-
 }
 
-export default Header;
+export default Header

@@ -1,17 +1,22 @@
-import React, { Component } from 'react';
-import '../App.css';
+import React, { Component } from 'react'
+import '../App.css'
 
 class Footer extends Component {
-
-  render(){
-
+  render () {
     return (
-        <footer className="footer">
-          <p><span role="img" aria-label="fish emoji">🐟</span>Made with big wishes by Negin Sauermann ©️ 2019 <span role="img" aria-label="fish emoji">🐟</span></p>
-        </footer>
-    );
+      <footer className='footer'>
+        <p>
+          <span role='img' aria-label='fish emoji'>
+            🐟
+          </span>
+          Made with big wishes by Negin Sauermann ©️ 2019{' '}
+          <span role='img' aria-label='fish emoji'>
+            🐟
+          </span>
+        </p>
+      </footer>
+    )
   }
-
 }
 
-export default Footer;
+export default Footer
