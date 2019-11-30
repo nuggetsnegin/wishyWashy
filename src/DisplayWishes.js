@@ -32,7 +32,7 @@ class DisplayWishes extends Component {
             }
 
             this.setState({
-                wishes: displayWishes
+                wishes: displayWishes.reverse() /*so new wish displays at the top*/
             });
         });
     }

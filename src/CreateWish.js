@@ -5,7 +5,8 @@ import firebase from "./firebase.js";
 import axios from "axios";
 import "./App.css";
 import Qs from 'qs';
-import LeoProfanity from 'leo-profanity';
+
+const filter = require('leo-profanity'); /*for filtering bad words*/
 
 class CreateWish extends Component {
   constructor() {
@@ -16,42 +17,26 @@ class CreateWish extends Component {
     };
 }
 
-componentDidMount(){
-        axios ({
-            method: 'GET',
-            url: 'https://proxy.hackeryou.com',
-            dataResponse: 'JSON',
-            paramsSerializer: function(params) {
-              return Qs.stringify(params, {arrayFormat: 'brackets'})
-            },
-            params: {
-              reqUrl: 'https://nookipedia.com/w/api.php?action=query&titles=Bugs/Animal_Crossing:_New_Leaf&prop=revisions&rvprop=content&format=json',
-              proxyHeaders: {
-                'header_params': 'value',
-              },
-              xmlToJSON: false,
-            }
-        }).then((result) =>{
-                console.log(result);
-            });
+// componentDidMount(){
+//         axios ({
+//             method: 'GET',
+//             url: 'https://proxy.hackeryou.com',
+//             dataResponse: 'JSON',
+//             paramsSerializer: function(params) {
+//               return Qs.stringify(params, {arrayFormat: 'brackets'})
+//             },
+//             params: {
+//               reqUrl: 'https://nookipedia.com/w/api.php?action=query&titles=Bugs/Animal_Crossing:_New_Leaf&prop=revisions&rvprop=content&format=json',
+//               proxyHeaders: {
+//                 'header_params': 'value',
+//               },
+//               xmlToJSON: false,
+//             }
+//         }).then((result) =>{
+//                 console.log(result);
+//         });
 
-}
-
-
-checkBadWords = async (wishInput) =>{
-
-    const filter = require('leo-profanity');
-    let cleanedUp = await filter.clean(wishInput, '💖');
-
-    let replace = wishInput + 'poo';
-
-    this.setState({
-        wishInput: cleanedUp
-    });
-
-    console.log('cleaned up', cleanedUp);
-
-}
+// }
 
 handleInput = event =>{
     this.setState({
@@ -59,20 +44,23 @@ handleInput = event =>{
     });
 }
 
+checkBadWords = () =>{
+    const wishInput = this.state.wishInput;
+    let cleanedUp = filter.clean(wishInput, '💖');
 
-validateInput = () =>{
-    /*check if input not empty*/
-    if (this.state.wishInput !== "") {
-        /*check if wish under char length*/
-        if(this.state.wishInput.length < 120){
-            this.checkBadWords(this.state.wishInput);
-            console.log('goes into wishinput lenght if', this.state.wishInput);
+    return cleanedUp;
+}
+
+validateInput = (wishInput) =>{
+    /*check if input not empty and *check if wish under char length*/
+        if(this.state.wishInput !== "" && this.state.wishInput.length < 120){
+           return wishInput;
         }
         else{
             console.log('failed to validate input');
             return false; /*? error message div?*/
         }
-    }
+    
 }
 
 handleSubmit = event =>{
@@ -81,15 +69,17 @@ handleSubmit = event =>{
 
     /*grabbing the current state of wish and calling checkBadwords and setting it to a new variable called wishToBeAdded also setting current state of support to support to push to db*/
 
-    this.validateInput();
+    this.validateInput(this.state.wishInput);
+    const cleanedText = this.checkBadWords();
 
     /*support is always 0 on creation so maybe not necessary*/
     const support = this.state.support;
-    console.log(this.state);
-     if(this.state.wishInput){ /*if object exists then we push to db*/
+
+
+     if(cleanedText){ /*if object exists then we push to db*/
         const dbRef = firebase.database().ref(); /*db reference*/
          dbRef.push({
-             wish: this.state.wishInput,
+             wish: cleanedText,
              support: support
          });
          this.setState({
@@ -104,18 +94,25 @@ handleSubmit = event =>{
 }
 
 
+handleChange(event){
+    const wishInput = event.target.value;
+
+}
+
 render(){
     return(
         <div className="input">
             <form onSubmit={this.handleSubmit}>
                 <label htmlFor="wishInput"></label>
-                <input
-                    id="wishInput"
+
+                <textarea
+                    rows="8"
                     type="text"
                     value={this.state.wishInput}
                     onChange={this.handleInput}
                     placeholder="I wish I could own 3 cats someday!"
                 />
+
             <button className="wishButton" type="submit">Submit Wish</button>
             </form>
         </div>

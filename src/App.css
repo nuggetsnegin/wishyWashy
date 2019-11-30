@@ -6,30 +6,75 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 .visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
-/* @font-face {
-  font-family: 'MyFont';
-  src: local('MyFont'), url(./src/fonts) format('woff');
-} */
+
+/*MAIN*/
+@import url('https://fonts.googleapis.com/css?family=Gaegu&display=swap');
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-family: 'Gaegu', cursive;
+  font-size: 2rem;
+}
+
+.App{
+  display: grid;
+}
 
 header{
   min-height: 20vh;
-  background-color: rgb(216, 199, 233);
+  background-color: rgb(56, 59, 109);
   color: white;
   text-align: center;
 }
 
 h1{
-  padding-top: 5vh;
+  padding-top: 10px;
+  font-family: 'Gaegu', cursive;
+  font-size: 5rem;
 }
 
 main {
-  text-align: center;
+  display: grid;
   min-height: 80vh;
-  background-image: url(/src/assets/pattern.png);
+  background-color: rgb(228, 135, 151);
+  grid-template-columns: repeat(2, min-content);
+  grid-gap: 200px;
+  grid-template-areas:
+  "wishInput wish wish"
+  "wishInput wish wish"
+  /* background-image: url(../src/assets/pattern4.png); */
 }
 
 
+/*WISH DISPLAY*/
 ul{
   list-style: none;
   padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 10px;
 }
+
+li{
+  background-color: white;
+  border: 3px dashed red;
+  padding: 50px;
+  min-height: 300px;
+}
+
+.input{
+  grid-area: wishInput;
+}
+
+.wishDisplay{
+  grid-area: wish;
+}
+
+textarea{
+  border: 3px dashed pink;
+}
+
