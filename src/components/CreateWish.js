@@ -53,15 +53,10 @@ class CreateWish extends Component {
     event.preventDefault()
 
     /* grabbing the current state of wish and calling checkBadwords and setting it to a new variable called wishToBeAdded also setting current state of support to support to push to db */
-
     const validatedInput = this.validateInput(this.state.wishInput)
-    console.log(validatedInput)
 
     if (validatedInput) {
       const cleanedText = this.checkBadWords()
-
-      /* support is always 0 on creation so maybe not necessary */
-      const support = this.state.support
 
       const dbRef = firebase.database().ref() /* db reference */
       dbRef.push({
