@@ -2,6 +2,7 @@
 /* Create a single 'wish' and loading it to the database. Rendering the text input field. */
 import React, { Component } from 'react'
 import firebase from '../firebase.js'
+import Error from './Error'
 
 const filter = require('leo-profanity') /* for filtering bad words */
 
@@ -11,13 +12,20 @@ class CreateWish extends Component {
     this.state = {
       wishInput: '',
       support: 0,
-      characterRemaining: 120
+      characterRemaining: 120,
+      showError: false /* for error pop up */
     }
   }
 
   handleInput = event => {
     this.setState({
       wishInput: event.target.value
+    })
+  }
+
+  toggleError = () => {
+    this.setState({
+      showError: !this.state.showError /* toggling error */
     })
   }
 
@@ -35,8 +43,8 @@ class CreateWish extends Component {
       return trimmedWishInput
     } else {
       /* disable button */
-      console.log('failed to validate input')
-      alert('facka you')
+      this.toggleError()
+      return false
     }
   }
 
@@ -46,48 +54,55 @@ class CreateWish extends Component {
 
     /* grabbing the current state of wish and calling checkBadwords and setting it to a new variable called wishToBeAdded also setting current state of support to support to push to db */
 
-    this.validateInput(this.state.wishInput)
-    const cleanedText = this.checkBadWords()
+    const validatedInput = this.validateInput(this.state.wishInput)
+    console.log(validatedInput)
 
-    /* support is always 0 on creation so maybe not necessary */
-    const support = this.state.support
+    if (validatedInput) {
+      const cleanedText = this.checkBadWords()
 
-    const dbRef = firebase.database().ref() /* db reference */
-    dbRef.push({
-      wish: cleanedText,
-      support: support
-    })
-    this.setState({
-      wishInput: '' /* making input field empty on submit */
-    })
+      /* support is always 0 on creation so maybe not necessary */
+      const support = this.state.support
+
+      const dbRef = firebase.database().ref() /* db reference */
+      dbRef.push({
+        wish: cleanedText,
+        support: support
+      })
+      this.setState({
+        wishInput: '' /* making input field empty on submit */
+      })
+    }
   }
 
   render () {
     return (
-      <div className='input'>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor='wishInput' />
+      <div className='inputContainer'>
+        {this.state.showError ? <Error closeError={this.toggleError} /> : null}
+        <div className='input'>
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor='wishInput' />
 
-          <textarea
-            rows='6'
-            maxLength={120}
-            type='text'
-            value={this.state.wishInput}
-            onChange={this.handleInput}
-            placeholder='I wish I could own 3 cats someday!'
-          />
-          <div className='buttonWrapper'>
-            <p>Wish Words Remaining: {this.state.wishInput.length}/120</p>
+            <textarea
+              rows='6'
+              maxLength={120}
+              type='text'
+              value={this.state.wishInput}
+              onChange={this.handleInput}
+              placeholder='I wish I could own 3 cats someday!'
+            />
+            <div className='buttonWrapper'>
+              <p>Wish Words Remaining: {this.state.wishInput.length}/120</p>
 
-            <button
-              className='wishButton'
-              type='submit'
-              disabled={!this.state.wishInput}
-            >
-              Submit Wish
-            </button>
-          </div>
-        </form>
+              <button
+                className='wishButton'
+                type='submit'
+                disabled={!this.state.wishInput}
+              >
+                Submit Wish
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     )
   }
