@@ -23,7 +23,7 @@ class CreateWish extends Component {
 
   checkBadWords = () => {
     const wishInput = this.state.wishInput
-    let cleanedUp = filter.clean(wishInput, '💖')
+    let cleanedUp = filter.clean(wishInput, '💢')
 
     return cleanedUp
   }
