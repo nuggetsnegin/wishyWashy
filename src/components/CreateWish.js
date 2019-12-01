@@ -96,7 +96,7 @@ class CreateWish extends Component {
               <button
                 className='wishButton'
                 type='submit'
-                disabled={!this.state.wishInput}
+                disabled={!this.state.wishInput || this.state.showError}
               >
                 Submit Wish
               </button>
