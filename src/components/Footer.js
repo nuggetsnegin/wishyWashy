@@ -9,7 +9,7 @@ class Footer extends Component {
             🐟
           </span>
           Made with big wishes by Negin Sauermann ©️ 2019{' '}
-          <span role='img' aria-label='fish emoji'>
+          <span role='img' aria-label='fish emoji' className='ripple'>
             🐟
           </span>
         </p>

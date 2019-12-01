@@ -1,0 +1,15 @@
+h1 {
+  display: inline;
+  position: relative;
+  letter-spacing: -5px;
+  color: rgb(236, 236, 246);
+  font-size: 15rem;
+}
+
+h1:after {
+  content: "Wishy Washy";
+  position: absolute;
+  left: 0px;
+  top: -10px;
+  color: rgba(29, 153, 255, 0.192);
+}

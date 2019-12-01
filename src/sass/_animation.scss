@@ -165,6 +165,19 @@
   transform: scale(0.83);
 }
 
+/*RIPPLE src: https://codepen.io/finnhvman/pen/jLXKJw*/
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale3d(0.75, 0.75, 1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale3d(1.5, 1.5, 1);
+  }
+}
+
 /* WISH BUBBLE KEYFRAMES
     src: https://codepen.io/Mark_Bowley/pen/mEtqj */
 
@@ -291,17 +304,35 @@
 /*BACKGROUND KEYFRAMES*/
 
 @-webkit-keyframes background {
-  0%{background-position:52% 0%}
-  50%{background-position:49% 100%}
-  100%{background-position:52% 0%}
+  0% {
+    background-position: 52% 0%;
+  }
+  50% {
+    background-position: 49% 100%;
+  }
+  100% {
+    background-position: 52% 0%;
+  }
 }
 @-moz-keyframes background {
-  0%{background-position:52% 0%}
-  50%{background-position:49% 100%}
-  100%{background-position:52% 0%}
+  0% {
+    background-position: 52% 0%;
+  }
+  50% {
+    background-position: 49% 100%;
+  }
+  100% {
+    background-position: 52% 0%;
+  }
 }
 @keyframes background {
-  0%{background-position:52% 0%}
-  50%{background-position:49% 100%}
-  100%{background-position:52% 0%}
+  0% {
+    background-position: 52% 0%;
+  }
+  50% {
+    background-position: 49% 100%;
+  }
+  100% {
+    background-position: 52% 0%;
+  }
 }

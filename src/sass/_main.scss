@@ -1,8 +1,8 @@
 /*VARIABLES SETUP*/
-$base-color: rgb(238, 242, 255);
-$dark-color: #32292F;
+$base-color: #f9f5ff;
+$dark-color: #28262c;
 $accent-color: rgb(25, 30, 71);
-
+$vibrant-color: #00a7e1;
 
 /*MAIN*/
 @import url("https://fonts.googleapis.com/css?family=Gaegu&display=swap");
@@ -45,35 +45,19 @@ main {
   grid-template-areas: "displayWish createWish displayWish";
 }
 
-h1 {
-  display: inline;
-  position: relative;
-  letter-spacing: -5px;
-  color: rgb(236, 236, 246);
-  font-size: 15rem;
-}
-
-h1:after {
-  content: "Wishy Washy";
-  position: absolute;
-  left: 0px;
-  top: 2px;
-  color: rgba(29, 153, 255, 0.192);
-}
-
-button {
-  border: none;
-  background-color: $accent-color;
-  color: $base-color;
-}
+// button {
+//   border: none;
+//   background-color: $accent-color;
+//   color: $base-color;
+// }
 
 /*INPUT BOX - WISH INPUT*/
-.buttonWrapper{
-    width: 50%;
-    text-align: center;
+.buttonWrapper {
+  width: 50%;
+  text-align: center;
 }
 
-.inputContainer{
+.inputContainer {
   padding: 10px;
   z-index: 2;
   grid-area: createWish;
@@ -81,22 +65,35 @@ button {
   width: 100%;
 }
 
-.wishButton{
-    font-size: 3rem;
-    padding: 20px;
-    max-width: 200px;
-    margin: 0 auto;
-    border-radius: 25px;
-    &:hover{
-        transform: scale(1.2);
-        background-color: $base-color;
-        color: $accent-color;
-        cursor: pointer;
-    }
-    &:focus{
-        transform: scale(1.2);
-        border: 2px dashed $base-color;
-    }
+.wishButton {
+  font-size: 3rem;
+  color: $base-color;
+  background-color: $accent-color;
+  padding: 20px;
+  max-width: 200px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 25px;
+  &:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    background: $vibrant-color
+      radial-gradient(circle, transparent 1%, $accent-color 1%) center/15000%;
+  }
+  &:focus {
+    transform: scale(1.2);
+    border: 2px dashed $base-color;
+  }
+  &:active {
+    background-color: $accent-color;
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
 }
 
 textarea {
@@ -107,12 +104,12 @@ textarea {
   resize: none;
   color: $base-color;
 
-  &::placeholder{
-      color: $base-color;
-      opacity: .6;
+  &::placeholder {
+    color: $base-color;
+    opacity: 0.6;
   }
-  &:focus{
-      border: 2px dashed $base-color;
+  &:focus {
+    border: 2px dashed $base-color;
   }
 }
 
@@ -176,18 +173,17 @@ li {
 .supportButton {
   background: transparent;
   color: $base-color;
-  &:hover{
+  &:hover {
     transform: scale(1.2);
-    
   }
-  &:focus{
+  &:focus {
     transform: scale(1.2);
     border: 2px dashed $accent-color;
   }
 }
 
-.heartWrapper{
-    margin-top: -40px;
+.heartWrapper {
+  margin-top: -40px;
 }
 
 footer {
@@ -199,7 +195,7 @@ footer {
 
 /*ERROR*/
 
-.errorMessage{
+.errorMessage {
   background-color: $accent-color;
   border-radius: 20px;
   position: absolute;
@@ -210,11 +206,10 @@ footer {
   padding: 150px;
   text-align: center;
 
-  button{
+  button {
     background-color: $base-color;
     color: $dark-color;
     padding: 20px;
     border-radius: 25px;
   }
-
 }

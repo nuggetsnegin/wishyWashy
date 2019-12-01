@@ -53,10 +53,14 @@ class CreateWish extends Component {
     event.preventDefault()
 
     /* grabbing the current state of wish and calling checkBadwords and setting it to a new variable called wishToBeAdded also setting current state of support to support to push to db */
+
     const validatedInput = this.validateInput(this.state.wishInput)
 
     if (validatedInput) {
       const cleanedText = this.checkBadWords()
+
+      /* support is always 0 on creation so maybe not necessary */
+      const support = this.state.support
 
       const dbRef = firebase.database().ref() /* db reference */
       dbRef.push({
@@ -89,7 +93,7 @@ class CreateWish extends Component {
               <p>Wish Words Remaining: {this.state.wishInput.length}/120</p>
 
               <button
-                className='wishButton'
+                className='wishButton ripple'
                 type='submit'
                 disabled={!this.state.wishInput || this.state.showError}
               >

@@ -196,7 +196,7 @@ body {
   font-family: "Gaegu", cursive;
   font-size: 2rem;
   overflow-x: hidden;
-  color: #eef2ff;
+  color: #f9f5ff;
 }
 
 .App {
@@ -223,28 +223,6 @@ main {
       grid-template-areas: "displayWish createWish displayWish";
 }
 
-h1 {
-  display: inline;
-  position: relative;
-  letter-spacing: -5px;
-  color: #ececf6;
-  font-size: 15rem;
-}
-
-h1:after {
-  content: "Wishy Washy";
-  position: absolute;
-  left: 0px;
-  top: 2px;
-  color: rgba(29, 153, 255, 0.192);
-}
-
-button {
-  border: none;
-  background-color: #191e47;
-  color: #eef2ff;
-}
-
 /*INPUT BOX - WISH INPUT*/
 .buttonWrapper {
   width: 50%;
@@ -263,24 +241,39 @@ button {
 
 .wishButton {
   font-size: 3rem;
+  color: #f9f5ff;
+  background-color: #191e47;
   padding: 20px;
   max-width: 200px;
   margin: 0 auto;
+  border: none;
   border-radius: 25px;
 }
 
 .wishButton:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  background-color: #eef2ff;
-  color: #191e47;
   cursor: pointer;
+  background: #00a7e1 radial-gradient(circle, transparent 1%, #191e47 1%) center/15000%;
 }
 
 .wishButton:focus {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  border: 2px dashed #eef2ff;
+  border: 2px dashed #f9f5ff;
+}
+
+.wishButton:active {
+  background-color: #191e47;
+  background-size: 100%;
+  -webkit-transition: background 0s;
+  transition: background 0s;
+}
+
+.ripple {
+  background-position: center;
+  -webkit-transition: background 0.8s;
+  transition: background 0.8s;
 }
 
 textarea {
@@ -290,31 +283,31 @@ textarea {
   border-radius: 25px;
   padding: 20px;
   resize: none;
-  color: #eef2ff;
+  color: #f9f5ff;
 }
 
 textarea::-webkit-input-placeholder {
-  color: #eef2ff;
-  opacity: .6;
+  color: #f9f5ff;
+  opacity: 0.6;
 }
 
 textarea:-ms-input-placeholder {
-  color: #eef2ff;
-  opacity: .6;
+  color: #f9f5ff;
+  opacity: 0.6;
 }
 
 textarea::-ms-input-placeholder {
-  color: #eef2ff;
-  opacity: .6;
+  color: #f9f5ff;
+  opacity: 0.6;
 }
 
 textarea::placeholder {
-  color: #eef2ff;
-  opacity: .6;
+  color: #f9f5ff;
+  opacity: 0.6;
 }
 
 textarea:focus {
-  border: 2px dashed #eef2ff;
+  border: 2px dashed #f9f5ff;
 }
 
 /*INTRODUCTION*/
@@ -322,7 +315,7 @@ textarea:focus {
   margin: 0 auto;
   text-align: center;
   width: 60%;
-  border: 1px solid #eef2ff;
+  border: 1px solid #f9f5ff;
   background-color: rgba(174, 230, 238, 0.2);
   -webkit-box-shadow: 10px 10px #191e47;
           box-shadow: 10px 10px #191e47;
@@ -331,7 +324,7 @@ textarea:focus {
   border-radius: 25px;
   font-size: 2rem;
   grid-area: introduction;
-  color: #eef2ff;
+  color: #f9f5ff;
 }
 
 /*WISH DISPLAY*/
@@ -360,7 +353,7 @@ li {
   font-size: 2rem;
   padding: 35px;
   border-radius: 50%;
-  color: #eef2ff;
+  color: #f9f5ff;
   min-height: 200px;
   min-width: 250px;
   overflow: hidden;
@@ -383,7 +376,7 @@ li {
 /*SUPPORT HEARTS*/
 .supportButton {
   background: transparent;
-  color: #eef2ff;
+  color: #f9f5ff;
 }
 
 .supportButton:hover {
@@ -404,7 +397,7 @@ li {
 footer {
   height: 9vh;
   opacity: 0.8;
-  color: #eef2ff;
+  color: #f9f5ff;
   text-align: center;
 }
 
@@ -413,8 +406,8 @@ footer {
   background-color: #191e47;
   border-radius: 20px;
   position: absolute;
-  -webkit-box-shadow: 10px 10px #32292F;
-          box-shadow: 10px 10px #32292F;
+  -webkit-box-shadow: 10px 10px #28262c;
+          box-shadow: 10px 10px #28262c;
   font-size: 2rem;
   color: white;
   z-index: 3;
@@ -423,10 +416,26 @@ footer {
 }
 
 .errorMessage button {
-  background-color: #eef2ff;
-  color: #32292F;
+  background-color: #f9f5ff;
+  color: #28262c;
   padding: 20px;
   border-radius: 25px;
+}
+
+h1 {
+  display: inline;
+  position: relative;
+  letter-spacing: -5px;
+  color: #ececf6;
+  font-size: 15rem;
+}
+
+h1:after {
+  content: "Wishy Washy";
+  position: absolute;
+  left: 0px;
+  top: -10px;
+  color: rgba(29, 153, 255, 0.192);
 }
 
 /*ANIMATIONS AND KEY FRAMES*/
@@ -524,6 +533,32 @@ footer {
   top: 80%;
   -webkit-transform: scale(0.83);
   transform: scale(0.83);
+}
+
+/*RIPPLE src: https://codepen.io/finnhvman/pen/jLXKJw*/
+@-webkit-keyframes ripple {
+  from {
+    opacity: 1;
+    -webkit-transform: scale3d(0.75, 0.75, 1);
+            transform: scale3d(0.75, 0.75, 1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(1.5, 1.5, 1);
+            transform: scale3d(1.5, 1.5, 1);
+  }
+}
+@keyframes ripple {
+  from {
+    opacity: 1;
+    -webkit-transform: scale3d(0.75, 0.75, 1);
+            transform: scale3d(0.75, 0.75, 1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale3d(1.5, 1.5, 1);
+            transform: scale3d(1.5, 1.5, 1);
+  }
 }
 
 /* WISH BUBBLE KEYFRAMES
