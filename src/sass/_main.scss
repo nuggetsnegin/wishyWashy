@@ -2,13 +2,17 @@
 $base-color: #f9f5ff;
 $dark-color: #28262c;
 $accent-color: rgb(25, 30, 71);
-$vibrant-color: #00a7e1;
+$vibrant-color: #61d8ff;
 
 /*MAIN*/
 @import url("https://fonts.googleapis.com/css?family=Gaegu&display=swap");
 
 html {
   font-size: 62.5%;
+}
+
+span{
+  color: $vibrant-color;
 }
 
 .wrapper {
@@ -45,11 +49,11 @@ main {
   grid-template-areas: "displayWish createWish displayWish";
 }
 
-// button {
-//   border: none;
-//   background-color: $accent-color;
-//   color: $base-color;
-// }
+button {
+  border: none;
+  background-color: $accent-color;
+  color: $base-color;
+}
 
 /*INPUT BOX - WISH INPUT*/
 .buttonWrapper {
@@ -120,12 +124,12 @@ textarea {
   text-align: center;
   width: 60%;
   border: 1px solid $base-color;
-  background-color: rgba(174, 230, 238, 0.2);
+  background-color: rgba(0, 221, 255, 0.2);
   box-shadow: 10px 10px $accent-color;
   margin-top: 5%;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 25px;
-  font-size: 2rem;
+  font-size: 2.2rem;
   grid-area: introduction;
   color: $base-color;
 }
@@ -149,14 +153,14 @@ ul {
 }
 
 li {
-  background-color: rgba(133, 196, 255, 0.178);
+  background-color: rgba(133, 196, 255, 0.445);
   font-size: 2rem;
-  padding: 35px;
-  border-radius: 50%;
+  text-align: center;
+  padding: 50px 40px;
   color: $base-color;
   min-height: 200px;
   min-width: 250px;
-  overflow: hidden; /*for if user puts really long word*/
+  overflow: hidden; /*for if user puts really long word it won't break out of the bubble!*/
 }
 
 .wishDisplay {
