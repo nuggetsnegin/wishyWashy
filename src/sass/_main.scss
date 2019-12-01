@@ -11,7 +11,7 @@ html {
   font-size: 62.5%;
 }
 
-span{
+span {
   color: $vibrant-color;
 }
 
@@ -37,16 +37,13 @@ body {
 }
 
 header {
-  height: 15vh;
+  height: 10vh;
   text-align: center;
   z-index: 3;
 }
 
 main {
-  display: grid;
-  height: 60vh;
-  grid-template-columns: repeat(3, min-content);
-  grid-template-areas: "displayWish createWish displayWish";
+  height: 50vh;
 }
 
 button {
@@ -57,25 +54,50 @@ button {
 
 /*INPUT BOX - WISH INPUT*/
 .buttonWrapper {
-  width: 50%;
   text-align: center;
 }
 
 .inputContainer {
-  padding: 10px;
-  z-index: 2;
-  grid-area: createWish;
-  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+}
+
+form{
+  z-index: 3;
+}
+
+textarea {
+  background-color: $accent-color;
+  box-shadow: 10px 10px $accent-color;
+  border-radius: 25px;
+  padding: 20px 80px;
   width: 100%;
+  margin: 0 auto;
+  resize: none;
+  color: $base-color;
+
+
+  &::placeholder {
+    color: $base-color;
+    opacity: 0.6;
+  }
+  &:focus {
+    border: 2px dashed $base-color;
+  }
 }
 
 .wishButton {
   font-size: 3rem;
+  text-align: center;
   color: $base-color;
   background-color: $accent-color;
   padding: 20px;
   max-width: 200px;
-  margin: 0 auto;
   border: none;
   border-radius: 25px;
   &:hover {
@@ -100,25 +122,7 @@ button {
   transition: background 0.8s;
 }
 
-textarea {
-  background-color: $accent-color;
-  box-shadow: 10px 10px $accent-color;
-  border-radius: 25px;
-  padding: 20px;
-  resize: none;
-  color: $base-color;
-
-  &::placeholder {
-    color: $base-color;
-    opacity: 0.6;
-  }
-  &:focus {
-    border: 2px dashed $base-color;
-  }
-}
-
 /*INTRODUCTION*/
-
 .introduction {
   margin: 0 auto;
   text-align: center;
@@ -191,23 +195,23 @@ li {
 }
 
 footer {
-  height: 9vh;
+  height: 9.1vh;
   opacity: 0.8;
   color: $base-color;
   text-align: center;
 }
 
 /*ERROR*/
-
 .errorMessage {
   background-color: $accent-color;
   border-radius: 20px;
   position: absolute;
+  right: 40%;
   box-shadow: 10px 10px $dark-color;
   font-size: 2rem;
   color: white;
-  z-index: 3;
-  padding: 150px;
+  z-index: 4;
+  padding: 120px 50px;
   text-align: center;
 
   button {
@@ -215,5 +219,21 @@ footer {
     color: $dark-color;
     padding: 20px;
     border-radius: 25px;
+    text-transform: uppercase;
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+      background: $vibrant-color
+        radial-gradient(circle, transparent 1%, $accent-color 1%) center/15000%;
+    }
+    &:focus {
+      transform: scale(1.2);
+      border: 2px dashed $base-color;
+    }
+    &:active {
+      background-color: $accent-color;
+      background-size: 100%;
+      transition: background 0s;
+    }
   }
 }

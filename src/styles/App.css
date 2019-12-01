@@ -212,19 +212,13 @@ body {
 }
 
 header {
-  height: 15vh;
+  height: 10vh;
   text-align: center;
   z-index: 3;
 }
 
 main {
-  display: -ms-grid;
-  display: grid;
-  height: 60vh;
-  -ms-grid-columns: (min-content)[3];
-      grid-template-columns: repeat(3, -webkit-min-content);
-      grid-template-columns: repeat(3, min-content);
-      grid-template-areas: "displayWish createWish displayWish";
+  height: 50vh;
 }
 
 button {
@@ -235,27 +229,70 @@ button {
 
 /*INPUT BOX - WISH INPUT*/
 .buttonWrapper {
-  width: 50%;
   text-align: center;
 }
 
 .inputContainer {
-  padding: 10px;
-  z-index: 2;
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: createWish;
-  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px;
+}
+
+.input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+form {
+  z-index: 3;
+}
+
+textarea {
+  background-color: #191e47;
+  -webkit-box-shadow: 10px 10px #191e47;
+          box-shadow: 10px 10px #191e47;
+  border-radius: 25px;
+  padding: 20px 80px;
   width: 100%;
+  margin: 0 auto;
+  resize: none;
+  color: #f9f5ff;
+}
+
+textarea::-webkit-input-placeholder {
+  color: #f9f5ff;
+  opacity: 0.6;
+}
+
+textarea:-ms-input-placeholder {
+  color: #f9f5ff;
+  opacity: 0.6;
+}
+
+textarea::-ms-input-placeholder {
+  color: #f9f5ff;
+  opacity: 0.6;
+}
+
+textarea::placeholder {
+  color: #f9f5ff;
+  opacity: 0.6;
+}
+
+textarea:focus {
+  border: 2px dashed #f9f5ff;
 }
 
 .wishButton {
   font-size: 3rem;
+  text-align: center;
   color: #f9f5ff;
   background-color: #191e47;
   padding: 20px;
   max-width: 200px;
-  margin: 0 auto;
   border: none;
   border-radius: 25px;
 }
@@ -284,40 +321,6 @@ button {
   background-position: center;
   -webkit-transition: background 0.8s;
   transition: background 0.8s;
-}
-
-textarea {
-  background-color: #191e47;
-  -webkit-box-shadow: 10px 10px #191e47;
-          box-shadow: 10px 10px #191e47;
-  border-radius: 25px;
-  padding: 20px;
-  resize: none;
-  color: #f9f5ff;
-}
-
-textarea::-webkit-input-placeholder {
-  color: #f9f5ff;
-  opacity: 0.6;
-}
-
-textarea:-ms-input-placeholder {
-  color: #f9f5ff;
-  opacity: 0.6;
-}
-
-textarea::-ms-input-placeholder {
-  color: #f9f5ff;
-  opacity: 0.6;
-}
-
-textarea::placeholder {
-  color: #f9f5ff;
-  opacity: 0.6;
-}
-
-textarea:focus {
-  border: 2px dashed #f9f5ff;
 }
 
 /*INTRODUCTION*/
@@ -377,9 +380,6 @@ li {
   right: 0;
   top: 0;
   z-index: 1;
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
   grid-area: displayWish;
 }
 
@@ -405,7 +405,7 @@ li {
 }
 
 footer {
-  height: 9vh;
+  height: 9.1vh;
   opacity: 0.8;
   color: #f9f5ff;
   text-align: center;
@@ -416,12 +416,13 @@ footer {
   background-color: #191e47;
   border-radius: 20px;
   position: absolute;
+  right: 40%;
   -webkit-box-shadow: 10px 10px #28262c;
           box-shadow: 10px 10px #28262c;
   font-size: 2rem;
   color: white;
-  z-index: 3;
-  padding: 150px;
+  z-index: 4;
+  padding: 120px 50px;
   text-align: center;
 }
 
@@ -430,6 +431,27 @@ footer {
   color: #28262c;
   padding: 20px;
   border-radius: 25px;
+  text-transform: uppercase;
+}
+
+.errorMessage button:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
+  background: #61d8ff radial-gradient(circle, transparent 1%, #191e47 1%) center/15000%;
+}
+
+.errorMessage button:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  border: 2px dashed #f9f5ff;
+}
+
+.errorMessage button:active {
+  background-color: #191e47;
+  background-size: 100%;
+  -webkit-transition: background 0s;
+  transition: background 0s;
 }
 
 h1 {
@@ -458,7 +480,7 @@ h1:after {
 .x1 {
   -webkit-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
   animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
-  left: 10%;
+  left: 5%;
   top: 5%;
   -webkit-transform: scale(1.6);
   transform: scale(1.6);
@@ -467,7 +489,7 @@ h1:after {
 .x2 {
   -webkit-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
   animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
-  left: 5%;
+  left: 15%;
   top: 80%;
   -webkit-transform: scale(0.8);
   transform: scale(0.8);
@@ -485,7 +507,7 @@ h1:after {
 .x4 {
   -webkit-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
   animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-  left: 40%;
+  left: 30%;
   top: 0;
   -webkit-transform: scale(1.9);
   transform: scale(1.9);
@@ -541,8 +563,8 @@ h1:after {
   animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
   left: 80%;
   top: 80%;
-  -webkit-transform: scale(0.83);
-  transform: scale(0.83);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /*RIPPLE src: https://codepen.io/finnhvman/pen/jLXKJw*/
