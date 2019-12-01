@@ -180,6 +180,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
+/*VARIABLES SETUP*/
 /*MAIN*/
 html {
   font-size: 62.5%;
@@ -191,34 +192,31 @@ html {
   overflow-x: hidden;
 }
 
-p {
-  color: white;
-}
-
 body {
   font-family: "Gaegu", cursive;
   font-size: 2rem;
   overflow-x: hidden;
+  color: #eef2ff;
 }
 
 .App {
-  background: linear-gradient(359deg, #3f4544, #40416c, #000000);
-  background-size: 600% 600%;
-  -webkit-animation: background 10s ease infinite;
-  animation: background 10s ease infinite;
+  background: -webkit-gradient(linear, left bottom, left top, from(#1a4d7c), to(#32292f));
+  background: linear-gradient(0deg, #1a4d7c, #32292f);
+  background-size: 400% 400%;
+  -webkit-animation: background 30s ease infinite;
+  animation: background 30s ease infinite;
 }
 
 header {
-  min-height: 15vh;
-  color: white;
+  height: 15vh;
   text-align: center;
   z-index: 3;
 }
 
 main {
-  min-height: 70vh;
   display: -ms-grid;
   display: grid;
+  height: 60vh;
   -ms-grid-columns: (min-content)[3];
       grid-template-columns: repeat(3, -webkit-min-content);
       grid-template-columns: repeat(3, min-content);
@@ -243,8 +241,18 @@ h1:after {
 
 button {
   border: none;
-  background-color: pink;
+  background-color: #191e47;
+  color: #eef2ff;
+  padding: 20px;
+  font-size: 3rem;
+  max-width: 200px;
+  margin: 0 auto;
   border-radius: 25px;
+}
+
+button:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 /*INPUT BOX - WISH INPUT*/
@@ -255,22 +263,60 @@ button {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: createWish;
+  background-image: url(/assets/blob-shape.svg);
+  background-size: cover;
+}
+
+.buttonWrapper {
+  width: 50%;
+  text-align: center;
 }
 
 textarea {
-  border: 3px dashed pink;
-  padding: 10px;
+  background-color: #191e47;
+  -webkit-box-shadow: 10px 10px #191e47;
+          box-shadow: 10px 10px #191e47;
+  border-radius: 25px;
+  padding: 20px;
+  resize: none;
+  color: #eef2ff;
 }
 
+textarea::-webkit-input-placeholder {
+  color: #eef2ff;
+  opacity: .6;
+}
+
+textarea:-ms-input-placeholder {
+  color: #eef2ff;
+  opacity: .6;
+}
+
+textarea::-ms-input-placeholder {
+  color: #eef2ff;
+  opacity: .6;
+}
+
+textarea::placeholder {
+  color: #eef2ff;
+  opacity: .6;
+}
+
+/*INTRODUCTION*/
 .introduction {
-  background-color: white;
-  width: 100%;
   margin: 0 auto;
   text-align: center;
-  padding: 20px;
+  width: 60%;
+  border: 1px solid #eef2ff;
+  background-color: rgba(174, 230, 238, 0.2);
+  -webkit-box-shadow: 10px 10px #191e47;
+          box-shadow: 10px 10px #191e47;
+  margin-top: 5%;
+  padding: 10px;
+  border-radius: 25px;
   font-size: 2rem;
   grid-area: introduction;
-  border: 3px dashed #1c1c74;
+  color: #eef2ff;
 }
 
 /*WISH DISPLAY*/
@@ -323,13 +369,28 @@ li {
 /*SUPPORT HEARTS*/
 .supportButton {
   background: transparent;
-  color: white;
+  color: #eef2ff;
+}
+
+.supportButton:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.supportButton:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  border: 2px dashed #191e47;
+}
+
+.heartWrapper {
+  margin-top: -40px;
 }
 
 footer {
-  height: 15vh;
+  height: 9vh;
   opacity: 0.8;
-  color: white;
+  color: #eef2ff;
   text-align: center;
 }
 
@@ -339,6 +400,7 @@ footer {
   animation: wobble 5s infinite both;
 }
 
+/*BUBBLE ANIMATIONS*/
 .x1 {
   -webkit-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
   animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
@@ -533,26 +595,27 @@ footer {
   }
 }
 
+/*BACKGROUND KEYFRAMES*/
 @-webkit-keyframes background {
   0% {
-    background-position: 46% 0%;
+    background-position: 52% 0%;
   }
   50% {
-    background-position: 55% 100%;
+    background-position: 49% 100%;
   }
   100% {
-    background-position: 46% 0%;
+    background-position: 52% 0%;
   }
 }
 
 @keyframes background {
   0% {
-    background-position: 46% 0%;
+    background-position: 52% 0%;
   }
   50% {
-    background-position: 55% 100%;
+    background-position: 49% 100%;
   }
   100% {
-    background-position: 46% 0%;
+    background-position: 52% 0%;
   }
 }

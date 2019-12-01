@@ -1,3 +1,9 @@
+/*VARIABLES SETUP*/
+$base-color: rgb(238, 242, 255);
+$dark-color: #32292F;
+$accent-color: rgb(25, 30, 71);
+
+
 /*MAIN*/
 @import url("https://fonts.googleapis.com/css?family=Gaegu&display=swap");
 
@@ -11,34 +17,30 @@ html {
   overflow-x: hidden;
 }
 
-p {
-  color: white;
-}
-
 body {
   font-family: "Gaegu", cursive;
   font-size: 2rem;
   overflow-x: hidden;
+  color: $base-color;
 }
 
 .App {
-  background: linear-gradient(359deg, #3f4544, #40416c, #000000);
-  background-size: 600% 600%;
-  -webkit-animation: background 10s ease infinite;
-  -moz-animation: background 10s ease infinite;
-  animation: background 10s ease infinite;
+  background: linear-gradient(0deg, #1a4d7c, #32292f);
+  background-size: 400% 400%;
+  -webkit-animation: background 30s ease infinite;
+  -moz-animation: background 30s ease infinite;
+  animation: background 30s ease infinite;
 }
 
 header {
-  min-height: 15vh;
-  color: white;
+  height: 15vh;
   text-align: center;
   z-index: 3;
 }
 
 main {
-  min-height: 70vh;
   display: grid;
+  height: 60vh;
   grid-template-columns: repeat(3, min-content);
   grid-template-areas: "displayWish createWish displayWish";
 }
@@ -61,8 +63,16 @@ h1:after {
 
 button {
   border: none;
-  background-color: pink;
+  background-color: $accent-color;
+  color: $base-color;
+  padding: 20px;
+  font-size: 3rem;
+  max-width: 200px;
+  margin: 0 auto;
   border-radius: 25px;
+  &:hover{
+    transform: scale(1.5);
+  }
 }
 
 /*INPUT BOX - WISH INPUT*/
@@ -71,22 +81,44 @@ button {
   padding: 10px;
   z-index: 2;
   grid-area: createWish;
+  background-image: url(/assets/blob-shape.svg);
+  background-size: cover;
+}
+
+.buttonWrapper{
+    width: 50%;
+    text-align: center;
 }
 
 textarea {
-  border: 3px dashed pink;
-  padding: 10px;
+  background-color: $accent-color;
+  box-shadow: 10px 10px $accent-color;
+  border-radius: 25px;
+  padding: 20px;
+  resize: none;
+  color: $base-color;
+
+  &::placeholder{
+      color: $base-color;
+      opacity: .6;
+  }
 }
 
+/*INTRODUCTION*/
+
 .introduction {
-  background-color: white;
-  width: 100%;
   margin: 0 auto;
   text-align: center;
-  padding: 20px;
+  width: 60%;
+  border: 1px solid $base-color;
+  background-color: rgba(174, 230, 238, 0.2);
+  box-shadow: 10px 10px $accent-color;
+  margin-top: 5%;
+  padding: 10px;
+  border-radius: 25px;
   font-size: 2rem;
   grid-area: introduction;
-  border: 3px dashed rgb(28, 28, 116);
+  color: $base-color;
 }
 
 /*WISH DISPLAY*/
@@ -132,12 +164,24 @@ li {
 /*SUPPORT HEARTS*/
 .supportButton {
   background: transparent;
-  color: white;
+  color: $base-color;
+  &:hover{
+    transform: scale(1.2);
+    
+  }
+  &:focus{
+    transform: scale(1.2);
+    border: 2px dashed $accent-color;
+  }
+}
+
+.heartWrapper{
+    margin-top: -40px;
 }
 
 footer {
-  height: 15vh;
+  height: 9vh;
   opacity: 0.8;
-  color: white;
+  color: $base-color;
   text-align: center;
 }

@@ -4,6 +4,7 @@
   animation: wobble 5s infinite both;
 }
 
+/*BUBBLE ANIMATIONS*/
 .x1 {
   -webkit-animation: animateBubble 25s linear infinite,
     sideWays 2s ease-in-out infinite alternate;
@@ -287,36 +288,20 @@
   }
 }
 
+/*BACKGROUND KEYFRAMES*/
+
 @-webkit-keyframes background {
-  0% {
-    background-position: 46% 0%;
-  }
-  50% {
-    background-position: 55% 100%;
-  }
-  100% {
-    background-position: 46% 0%;
-  }
+  0%{background-position:52% 0%}
+  50%{background-position:49% 100%}
+  100%{background-position:52% 0%}
 }
 @-moz-keyframes background {
-  0% {
-    background-position: 46% 0%;
-  }
-  50% {
-    background-position: 55% 100%;
-  }
-  100% {
-    background-position: 46% 0%;
-  }
+  0%{background-position:52% 0%}
+  50%{background-position:49% 100%}
+  100%{background-position:52% 0%}
 }
 @keyframes background {
-  0% {
-    background-position: 46% 0%;
-  }
-  50% {
-    background-position: 55% 100%;
-  }
-  100% {
-    background-position: 46% 0%;
-  }
+  0%{background-position:52% 0%}
+  50%{background-position:49% 100%}
+  100%{background-position:52% 0%}
 }

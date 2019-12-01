@@ -27,14 +27,15 @@ class Support extends Component {
   /* rendering support number and button */
   render () {
     /* only need theWishId and support to increment support # */
-    console.log('render')
     return (
       <div className='displaySupport'>
         <button className='supportButton' onClick={this.supporting}>
-          <span role='img' aria-label='heart emoji'>
-            💗
-          </span>
-          {this.state.support}
+          <div class='heartWrapper'>
+            <span className='heart' role='img' aria-label='heart emoji'>
+              💗
+            </span>
+            {this.state.support}
+          </div>
         </button>
       </div>
     )

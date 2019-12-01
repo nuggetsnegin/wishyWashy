@@ -14,9 +14,9 @@ class App extends Component {
 
         <Header />
         <div className="wrapper">
-        {/* <div className="introduction">
-              <p>Hi there! I see you want to make a wish well.. just type one in!</p>
-        </div> */}
+        <div className="introduction">
+              <p>Hi there, I see you want to make a wish well.. just type one in! If you're too shy to share, feel free to like other people's wishes!</p>
+        </div>
           <main>
             <CreateWish />
             <DisplayWishes />

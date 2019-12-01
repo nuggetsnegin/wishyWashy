@@ -76,15 +76,17 @@ class CreateWish extends Component {
             onChange={this.handleInput}
             placeholder='I wish I could own 3 cats someday!'
           />
-          <p>Wish Words Remaining: {this.state.wishInput.length}/120</p>
+          <div className='buttonWrapper'>
+            <p>Wish Words Remaining: {this.state.wishInput.length}/120</p>
 
-          <button
-            className='wishButton'
-            type='submit'
-            disabled={!this.state.wishInput}
-          >
-            Submit Wish
-          </button>
+            <button
+              className='wishButton'
+              type='submit'
+              disabled={!this.state.wishInput}
+            >
+              Submit Wish
+            </button>
+          </div>
         </form>
       </div>
     )
