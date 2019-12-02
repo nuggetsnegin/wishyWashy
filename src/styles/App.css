@@ -203,7 +203,7 @@ html {
 }
 
 span {
-  color: #61d8ff;
+  color: #319ec2;
   font-size: 2.5rem;
 }
 
@@ -244,6 +244,9 @@ body {
 header {
   text-align: center;
   z-index: 3;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: Header;
 }
 
 button {
@@ -259,15 +262,15 @@ button {
 
 .inputContainer {
   margin-top: 20px;
-}
-
-.input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.input {
   overflow: hidden;
 }
 
@@ -326,7 +329,7 @@ textarea:focus {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   cursor: pointer;
-  background: #61d8ff radial-gradient(circle, transparent 1%, #191e47 1%) center/15000%;
+  background: #319ec2 radial-gradient(circle, transparent 1%, #191e47 1%) center/15000%;
 }
 
 .wishButton:focus {
@@ -368,7 +371,7 @@ textarea:focus {
 }
 
 .introduction span {
-  color: #61d8ff;
+  color: #319ec2;
 }
 
 /*WISH DISPLAY*/
@@ -431,16 +434,15 @@ footer p {
 
 /*ERROR*/
 .errorMessage {
-  background-color: #61d8ff;
+  background-color: #319ec2;
   border-radius: 20px;
   position: absolute;
-  right: 30%;
   -webkit-box-shadow: 10px 10px #191e47;
           box-shadow: 10px 10px #191e47;
   font-size: 2rem;
   color: #191e47;
   z-index: 4;
-  padding: 100px 100px;
+  padding: 50px 45px;
   text-align: center;
 }
 

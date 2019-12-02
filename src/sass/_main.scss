@@ -2,7 +2,7 @@
 $base-color: #f9f5ff;
 $dark-color: #28262c;
 $accent-color: rgb(25, 30, 71);
-$vibrant-color: #61d8ff;
+$vibrant-color: #319ec2;
 
 /*MAIN*/
 @import url("https://fonts.googleapis.com/css?family=Gaegu&display=swap");
@@ -64,6 +64,7 @@ body {
 header {
   text-align: center;
   z-index: 3;
+  grid-area: Header;
 }
 
 button {
@@ -79,11 +80,11 @@ button {
 
 .inputContainer {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .input {
-  display: flex;
-  justify-content: center;
   overflow: hidden;
 }
 
@@ -219,12 +220,11 @@ footer {
   background-color: $vibrant-color;
   border-radius: 20px;
   position: absolute;
-  right: 30%;
   box-shadow: 10px 10px $accent-color;
   font-size: 2rem;
   color: $accent-color;
   z-index: 4;
-  padding: 100px 100px;
+  padding: 50px 45px;
   text-align: center;
 
   button {
