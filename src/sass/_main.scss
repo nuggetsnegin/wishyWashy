@@ -95,7 +95,7 @@ textarea {
   background-color: $accent-color;
   box-shadow: 10px 10px $accent-color;
   border-radius: 25px;
-  padding: 20px 80px;
+  padding: 10px 20px;
   width: 100%;
   margin: 0 auto;
   resize: none;
@@ -147,7 +147,7 @@ textarea {
   z-index: 2;
   position: relative; /*for z-index*/
   text-align: center;
-  width: 30%;
+  width: 50%;
   border: 1px solid $base-color;
   background-color: $accent-color;
   // background-color: rgba(0, 221, 255, 1);
@@ -179,7 +179,7 @@ ul {
 
 li {
   background-color: rgba(133, 196, 255, 0.445);
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-align: center;
   padding: 50px 40px;
   color: $base-color;
@@ -188,13 +188,6 @@ li {
   overflow: hidden; /*for if user puts really long word it won't break out of the bubble!*/
 }
 
-// .wishDisplay {
-//   bottom: 0;
-//   left: 0;
-//   position: fixed;
-//   right: 0;
-//   top: 0;
-// }
 
 /*SUPPORT HEARTS*/
 .supportButton {

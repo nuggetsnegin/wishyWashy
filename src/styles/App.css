@@ -280,7 +280,7 @@ textarea {
   -webkit-box-shadow: 10px 10px #191e47;
           box-shadow: 10px 10px #191e47;
   border-radius: 25px;
-  padding: 20px 80px;
+  padding: 10px 20px;
   width: 100%;
   margin: 0 auto;
   resize: none;
@@ -355,7 +355,7 @@ textarea:focus {
   position: relative;
   /*for z-index*/
   text-align: center;
-  width: 30%;
+  width: 50%;
   border: 1px solid #f9f5ff;
   background-color: #191e47;
   -webkit-box-shadow: 10px 10px #191e47;
@@ -387,7 +387,7 @@ ul {
 
 li {
   background-color: rgba(133, 196, 255, 0.445);
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-align: center;
   padding: 50px 40px;
   color: #f9f5ff;

@@ -82,7 +82,7 @@ class CreateWish extends Component {
             <label htmlFor='wishInput' />
 
             <textarea
-              rows='6'
+              rows='4'
               maxLength={120}
               type='text'
               value={this.state.wishInput}
