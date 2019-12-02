@@ -27,7 +27,7 @@ html {
 
 span {
   color: $vibrant-color;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
 }
 
 .wrapper {
@@ -65,6 +65,10 @@ header {
   text-align: center;
   z-index: 3;
   grid-area: Header;
+  img{
+    width: 50px;
+    height: 50px;
+  }
 }
 
 button {
@@ -228,12 +232,23 @@ footer {
   padding: 50px 45px;
   text-align: center;
 
+  h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  p{
+    margin: 0;
+    padding-bottom: 25px;
+  }
+
   button {
     background-color: $base-color;
     color: $dark-color;
     padding: 20px;
     border-radius: 25px;
     text-transform: uppercase;
+    border: 2px solid $accent-color;
     &:hover {
       transform: scale(1.2);
       color: $base-color;
