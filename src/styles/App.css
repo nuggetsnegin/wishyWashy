@@ -276,12 +276,13 @@ button {
 
 form {
   z-index: 3;
+  position: relative;
+  /*for z-index to work*/
 }
 
 textarea {
   background-color: #191e47;
-  -webkit-box-shadow: 10px 10px #191e47;
-          box-shadow: 10px 10px #191e47;
+  border: 2px solid #f9f5ff;
   border-radius: 25px;
   padding: 10px 20px;
   width: 100%;
@@ -321,7 +322,7 @@ textarea:focus {
   background-color: #191e47;
   padding: 15px;
   margin-bottom: 15px;
-  border: none;
+  border: 1px solid #319ec2;
   border-radius: 25px;
 }
 
@@ -359,7 +360,7 @@ textarea:focus {
   /*for z-index*/
   text-align: center;
   width: 50%;
-  border: 1px solid #f9f5ff;
+  border: 1px solid #319ec2;
   background-color: #191e47;
   -webkit-box-shadow: 10px 10px #191e47;
           box-shadow: 10px 10px #191e47;
