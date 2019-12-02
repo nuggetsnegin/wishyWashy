@@ -186,6 +186,22 @@ html {
   font-size: 62.5%;
 }
 
+.heartWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.heartWrapper p {
+  margin-top: 6px;
+}
+
+.heartWrapper img {
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+}
+
 span {
   color: #61d8ff;
   font-size: 2.5rem;
@@ -335,22 +351,23 @@ textarea:focus {
 /*INTRODUCTION*/
 .introduction {
   margin: 0 auto;
-  z-index: 4;
+  z-index: 2;
+  position: relative;
+  /*for z-index*/
   text-align: center;
-  width: 50%;
+  width: 30%;
   border: 1px solid #f9f5ff;
-  background-color: rgba(0, 221, 255, 0.5);
+  background-color: #191e47;
   -webkit-box-shadow: 10px 10px #191e47;
           box-shadow: 10px 10px #191e47;
-  margin-top: 1%;
   padding: 10px 20px;
   border-radius: 25px;
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #f9f5ff;
 }
 
 .introduction span {
-  color: #191e47;
+  color: #61d8ff;
 }
 
 /*WISH DISPLAY*/
@@ -364,7 +381,6 @@ ul {
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 1;
   max-height: 200px;
   max-width: 250px;
 }
@@ -379,15 +395,6 @@ li {
   min-width: 250px;
   overflow: hidden;
   /*for if user puts really long word it won't break out of the bubble!*/
-}
-
-.wishDisplay {
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 1;
 }
 
 /*SUPPORT HEARTS*/
@@ -466,7 +473,7 @@ h1 {
   position: relative;
   letter-spacing: -5px;
   color: #ececf6;
-  font-size: 15rem;
+  font-size: 12rem;
   margin: 0;
 }
 

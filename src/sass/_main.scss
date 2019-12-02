@@ -11,6 +11,20 @@ html {
   font-size: 62.5%;
 }
 
+.heartWrapper{
+  display: flex;
+
+  p{
+    margin-top: 6px;
+  }
+
+  img{
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+  }  
+}
+
 span {
   color: $vibrant-color;
   font-size: 2.5rem;
@@ -130,20 +144,21 @@ textarea {
 /*INTRODUCTION*/
 .introduction {
   margin: 0 auto;
-  z-index: 4;
+  z-index: 2;
+  position: relative; /*for z-index*/
   text-align: center;
-  width: 50%;
+  width: 30%;
   border: 1px solid $base-color;
-  background-color: rgba(0, 221, 255, 0.5);
+  background-color: $accent-color;
+  // background-color: rgba(0, 221, 255, 1);
   box-shadow: 10px 10px $accent-color;
-  margin-top: 1%;
   padding: 10px 20px;
   border-radius: 25px;
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: $base-color;
 
   span{
-    color: $accent-color;
+    color: $vibrant-color;
   }
 }
 
@@ -158,7 +173,6 @@ ul {
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 1;
   max-height: 200px;
   max-width: 250px;
 }
@@ -174,14 +188,13 @@ li {
   overflow: hidden; /*for if user puts really long word it won't break out of the bubble!*/
 }
 
-.wishDisplay {
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 1;
-}
+// .wishDisplay {
+//   bottom: 0;
+//   left: 0;
+//   position: fixed;
+//   right: 0;
+//   top: 0;
+// }
 
 /*SUPPORT HEARTS*/
 .supportButton {

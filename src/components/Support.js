@@ -29,10 +29,7 @@ class Support extends Component {
       <div className='displaySupport'>
         <button className='supportButton' onClick={this.supporting}>
           <div className='heartWrapper'>
-            <span className='heart' role='img' aria-label='heart emoji'>
-              💙
-            </span>
-            {this.state.support}
+            <img src={require('../assets/heart.png')} alt="heart icon"></img><p>{this.state.support}</p>
           </div>
         </button>
       </div>
