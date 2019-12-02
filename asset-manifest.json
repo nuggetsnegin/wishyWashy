@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/wishyWashy/static/css/main.914ffe51.chunk.css",
-    "main.js": "/wishyWashy/static/js/main.f8c47432.chunk.js",
-    "main.js.map": "/wishyWashy/static/js/main.f8c47432.chunk.js.map",
+    "main.css": "/wishyWashy/static/css/main.8e3dc6e9.chunk.css",
+    "main.js": "/wishyWashy/static/js/main.f6bd7ca8.chunk.js",
+    "main.js.map": "/wishyWashy/static/js/main.f6bd7ca8.chunk.js.map",
     "runtime-main.js": "/wishyWashy/static/js/runtime-main.b5eb226b.js",
     "runtime-main.js.map": "/wishyWashy/static/js/runtime-main.b5eb226b.js.map",
     "static/js/2.4589eba2.chunk.js": "/wishyWashy/static/js/2.4589eba2.chunk.js",
     "static/js/2.4589eba2.chunk.js.map": "/wishyWashy/static/js/2.4589eba2.chunk.js.map",
     "index.html": "/wishyWashy/index.html",
-    "precache-manifest.2bf1df2cf23ca912a9c0dd90cffe9039.js": "/wishyWashy/precache-manifest.2bf1df2cf23ca912a9c0dd90cffe9039.js",
+    "precache-manifest.8ee8de05d6719736fb93d9fbe94dd3ec.js": "/wishyWashy/precache-manifest.8ee8de05d6719736fb93d9fbe94dd3ec.js",
     "service-worker.js": "/wishyWashy/service-worker.js",
-    "static/css/main.914ffe51.chunk.css.map": "/wishyWashy/static/css/main.914ffe51.chunk.css.map"
+    "static/css/main.8e3dc6e9.chunk.css.map": "/wishyWashy/static/css/main.8e3dc6e9.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.b5eb226b.js",
     "static/js/2.4589eba2.chunk.js",
-    "static/css/main.914ffe51.chunk.css",
-    "static/js/main.f8c47432.chunk.js"
+    "static/css/main.8e3dc6e9.chunk.css",
+    "static/js/main.f6bd7ca8.chunk.js"
   ]
 }
