@@ -194,6 +194,9 @@ span {
   max-width: 1200px;
   margin: 0 auto;
   overflow-x: hidden;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: Main;
 }
 
 body {
@@ -209,16 +212,21 @@ body {
   background-size: 400% 400%;
   -webkit-animation: background 30s ease infinite;
   animation: background 30s ease infinite;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 30px;
+  -ms-grid-rows: (min-content)[3];
+      grid-template-rows: repeat(3, -webkit-min-content);
+      grid-template-rows: repeat(3, min-content);
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "Header" "Main" "Footer";
 }
 
 header {
   height: 10vh;
   text-align: center;
   z-index: 3;
-}
-
-main {
-  height: 50vh;
 }
 
 button {
@@ -336,18 +344,12 @@ textarea:focus {
   padding: 10px 20px;
   border-radius: 25px;
   font-size: 2.2rem;
-  grid-area: introduction;
   color: #f9f5ff;
 }
 
 /*WISH DISPLAY*/
 ul {
   list-style: none;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (min-content)[4];
-      grid-template-columns: repeat(4, -webkit-min-content);
-      grid-template-columns: repeat(4, min-content);
 }
 
 .bubblePosition {
@@ -380,7 +382,6 @@ li {
   right: 0;
   top: 0;
   z-index: 1;
-  grid-area: displayWish;
 }
 
 /*SUPPORT HEARTS*/
@@ -401,10 +402,13 @@ li {
 }
 
 footer {
-  min-height: 9vh;
+  min-height: 10vh;
   opacity: 0.8;
   color: #f9f5ff;
   text-align: center;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: Footer;
 }
 
 /*ERROR*/
@@ -428,13 +432,6 @@ footer {
   padding: 20px;
   border-radius: 25px;
   text-transform: uppercase;
-}
-
-.errorMessage button:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  cursor: pointer;
-  background: #61d8ff radial-gradient(circle, transparent 1%, #191e47 1%) center/15000%;
 }
 
 .errorMessage button:focus {
@@ -786,9 +783,6 @@ h1:after {
   }
   .inputContainer {
     margin-top: 50px;
-  }
-  main {
-    height: 61vh;
   }
   textarea {
     padding: 20px 30px;

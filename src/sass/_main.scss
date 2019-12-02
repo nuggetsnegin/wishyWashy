@@ -19,6 +19,7 @@ span {
   max-width: 1200px;
   margin: 0 auto;
   overflow-x: hidden;
+  grid-area: Main;
 }
 
 body {
@@ -34,16 +35,20 @@ body {
   -webkit-animation: background 30s ease infinite;
   -moz-animation: background 30s ease infinite;
   animation: background 30s ease infinite;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "Header"
+  "Main"
+  "Footer";
 }
 
 header {
   height: 10vh;
   text-align: center;
   z-index: 3;
-}
-
-main {
-  height: 50vh;
 }
 
 button {
@@ -134,15 +139,14 @@ textarea {
   padding: 10px 20px;
   border-radius: 25px;
   font-size: 2.2rem;
-  grid-area: introduction;
   color: $base-color;
 }
 
 /*WISH DISPLAY*/
 ul {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, min-content);
+  // display: grid;
+  // grid-template-columns: repeat(5, min-content);
 }
 
 .bubblePosition {
@@ -174,7 +178,6 @@ li {
   right: 0;
   top: 0;
   z-index: 1;
-  grid-area: displayWish;
 }
 
 /*SUPPORT HEARTS*/
@@ -192,10 +195,11 @@ li {
 
 
 footer {
-  min-height: 9vh;
+  min-height: 10vh;
   opacity: 0.8;
   color: $base-color;
   text-align: center;
+  grid-area: Footer;
 }
 
 /*ERROR*/
@@ -217,12 +221,12 @@ footer {
     padding: 20px;
     border-radius: 25px;
     text-transform: uppercase;
-    &:hover {
-      transform: scale(1.2);
-      cursor: pointer;
-      background: $vibrant-color
-        radial-gradient(circle, transparent 1%, $accent-color 1%) center/15000%;
-    }
+    // &:hover {
+    //   transform: scale(1.2);
+    //   cursor: pointer;
+    //   background: $vibrant-color
+    //     radial-gradient(circle, transparent 1%, $accent-color 1%) center/15000%;
+    // }
     &:focus {
       transform: scale(1.2);
       border: 2px dashed $base-color;
