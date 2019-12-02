@@ -20,8 +20,6 @@ class Support extends Component {
 
     dbRef.child(wishId).update({ support: newSupportVal })
 
-    console.log('support state', this.state.support)
-    console.log('support props', this.props.support)
   }
 
   /* rendering support number and button */

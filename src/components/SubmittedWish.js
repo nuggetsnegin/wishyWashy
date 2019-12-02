@@ -26,7 +26,7 @@ class SubmittedWish extends Component {
     
     
     return (
-      <div className={animationClass + ' ' + 'bubblePosition'} id={wishId}>
+      <div className={`${animationClass} bubblePosition`} id={wishId}>
         <li className='wobble' style={{borderRadius: randomBorderRadius[borderRandomizer]}}>{wish}</li>   
         <Support support={support} key={wishId} wishId={wishId} />
       </div>
