@@ -190,12 +190,9 @@ li {
   }
 }
 
-.heartWrapper {
-  margin-top: -40px;
-}
 
 footer {
-  height: 9.1vh;
+  min-height: 9vh;
   opacity: 0.8;
   color: $base-color;
   text-align: center;

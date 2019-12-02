@@ -1,0 +1,191 @@
+@media (max-width: 1060px) {
+  h1 {
+    font-size: 10rem;
+  }
+  li {
+    max-height: 60px;
+    max-width: 60px;
+  }
+
+  .x1 {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1);
+  }
+
+  .x2 {
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+
+  .x3 {
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+
+  .x4 {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  .x5 {
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+
+  .x6 {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  .x7 {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    left: 60%;
+  }
+
+  .x8 {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    transform: scale(1.1);
+    left: 60%;
+  }
+
+  .x9 {
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    transform: scale(0.7);
+
+    left: 70%;
+  }
+
+  .x10 {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+
+    left: 80%;
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    padding: 10px;
+    height: 5vh;
+  }
+  h1 {
+    font-size: 8rem;
+  }
+  .introduction {
+    font-size: 2rem;
+    margin-top: 100px;
+  }
+  .inputContainer {
+    margin-top: 50px;
+  }
+  main {
+    height: 61vh;
+  }
+
+  textarea {
+    padding: 20px 30px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 585px) {
+  footer {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .x1 {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  .x2 {
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+
+  .x3 {
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+
+  .x4 {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  .x5 {
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+
+  .x6 {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  .x7 {
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+
+  .x8 {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  .x9 {
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+  }
+
+  .x10 {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 475px) {
+
+      h1 {
+        font-size: 6.5rem;
+      }
+
+      .introduction {
+        margin-top: 50px;
+        width: 80%;
+      }
+      .inputContainer {
+        margin-top: 40px;
+      }
+      
+  textarea {
+    padding: 30px 10px;
+    overflow: hidden;
+  }
+
+  footer{
+      width: 80%;
+  }
+
+}
