@@ -42,10 +42,10 @@ body {
   font-size: 2rem;
   overflow-x: hidden;
   color: $base-color;
-  min-height: 100vh;
 }
 
 .App {
+  min-height: 100vh;
   background: linear-gradient(0deg, #1a4d7c, #32292f);
   background-size: 400% 400%;
   -webkit-animation: background 30s ease infinite;
@@ -150,11 +150,11 @@ textarea {
   width: 50%;
   border: 1px solid $base-color;
   background-color: $accent-color;
-  // background-color: rgba(0, 221, 255, 1);
   box-shadow: 10px 10px $accent-color;
-  padding: 10px 20px;
+  padding: 5px 10px;
+  opacity: 0.95;
   border-radius: 25px;
-  font-size: 2rem;
+  font-size: 1.85rem;
   color: $base-color;
 
   span{
@@ -209,6 +209,9 @@ footer {
   color: $base-color;
   text-align: center;
   grid-area: Footer;
+  p{
+    padding: 10px 0px;
+  }
 }
 
 /*ERROR*/
