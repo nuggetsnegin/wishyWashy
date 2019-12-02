@@ -188,6 +188,7 @@ html {
 
 span {
   color: #61d8ff;
+  font-size: 2.5rem;
 }
 
 .wrapper {
@@ -204,6 +205,7 @@ body {
   font-size: 2rem;
   overflow-x: hidden;
   color: #f9f5ff;
+  min-height: 100vh;
 }
 
 .App {
@@ -224,7 +226,6 @@ body {
 }
 
 header {
-  height: 10vh;
   text-align: center;
   z-index: 3;
 }
@@ -336,16 +337,20 @@ textarea:focus {
   margin: 0 auto;
   z-index: 4;
   text-align: center;
-  width: 60%;
+  width: 50%;
   border: 1px solid #f9f5ff;
   background-color: rgba(0, 221, 255, 0.5);
   -webkit-box-shadow: 10px 10px #191e47;
           box-shadow: 10px 10px #191e47;
-  margin-top: 5%;
+  margin-top: 1%;
   padding: 10px 20px;
   border-radius: 25px;
   font-size: 2.2rem;
   color: #f9f5ff;
+}
+
+.introduction span {
+  color: #191e47;
 }
 
 /*WISH DISPLAY*/
@@ -414,16 +419,16 @@ footer {
 
 /*ERROR*/
 .errorMessage {
-  background-color: #191e47;
+  background-color: #61d8ff;
   border-radius: 20px;
   position: absolute;
-  right: 40%;
-  -webkit-box-shadow: 10px 10px #28262c;
-          box-shadow: 10px 10px #28262c;
+  right: 30%;
+  -webkit-box-shadow: 10px 10px #191e47;
+          box-shadow: 10px 10px #191e47;
   font-size: 2rem;
-  color: white;
+  color: #191e47;
   z-index: 4;
-  padding: 120px 50px;
+  padding: 100px 100px;
   text-align: center;
 }
 
@@ -438,14 +443,15 @@ footer {
 .errorMessage button:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+  color: #f9f5ff;
   cursor: pointer;
-  background: #61d8ff radial-gradient(circle, transparent 1%, #191e47 1%) center/15000%;
+  background: #191e47 radial-gradient(circle, transparent 1%, #191e47 1%) center/15000%;
 }
 
 .errorMessage button:focus {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  border: 2px dashed #f9f5ff;
+  border: 2px dashed #191e47;
 }
 
 .errorMessage button:active {
@@ -461,6 +467,7 @@ h1 {
   letter-spacing: -5px;
   color: #ececf6;
   font-size: 15rem;
+  margin: 0;
 }
 
 h1:after {

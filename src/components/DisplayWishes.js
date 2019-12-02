@@ -45,7 +45,7 @@ class DisplayWishes extends Component {
 
   shuffleArray = wishesArray => {
     for (let i = wishesArray.length - 1; i > 0; i--) {
-      const randomized = Math.floor(Math.random() * i + 1)
+      const randomized = Math.floor(Math.random() * i )
       ;[wishesArray[i], wishesArray[randomized]] = [
         wishesArray[randomized],
         wishesArray[i]
