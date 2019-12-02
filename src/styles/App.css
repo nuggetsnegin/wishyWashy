@@ -214,7 +214,7 @@ body {
   animation: background 30s ease infinite;
   display: -ms-grid;
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 20px;
   -ms-grid-rows: (min-content)[3];
       grid-template-rows: repeat(3, -webkit-min-content);
       grid-template-rows: repeat(3, min-content);
@@ -241,8 +241,7 @@ button {
 }
 
 .inputContainer {
-  margin-top: 100px;
-  padding: 20px;
+  margin-top: 20px;
 }
 
 .input {
@@ -252,6 +251,7 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow: hidden;
 }
 
 form {
@@ -295,12 +295,12 @@ textarea:focus {
 }
 
 .wishButton {
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-align: center;
   color: #f9f5ff;
   background-color: #191e47;
-  padding: 20px;
-  max-width: 200px;
+  padding: 15px;
+  margin-bottom: 15px;
   border: none;
   border-radius: 25px;
 }
@@ -334,10 +334,11 @@ textarea:focus {
 /*INTRODUCTION*/
 .introduction {
   margin: 0 auto;
+  z-index: 4;
   text-align: center;
   width: 60%;
   border: 1px solid #f9f5ff;
-  background-color: rgba(0, 221, 255, 0.2);
+  background-color: rgba(0, 221, 255, 0.5);
   -webkit-box-shadow: 10px 10px #191e47;
           box-shadow: 10px 10px #191e47;
   margin-top: 5%;
@@ -402,7 +403,7 @@ li {
 }
 
 footer {
-  min-height: 10vh;
+  min-height: 5vh;
   opacity: 0.8;
   color: #f9f5ff;
   text-align: center;
@@ -432,6 +433,13 @@ footer {
   padding: 20px;
   border-radius: 25px;
   text-transform: uppercase;
+}
+
+.errorMessage button:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
+  background: #61d8ff radial-gradient(circle, transparent 1%, #191e47 1%) center/15000%;
 }
 
 .errorMessage button:focus {
