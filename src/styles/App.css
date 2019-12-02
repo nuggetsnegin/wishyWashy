@@ -452,6 +452,13 @@ footer p {
   text-align: center;
 }
 
+.errorMessage img {
+  display: block;
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+}
+
 .errorMessage h2 {
   font-size: 3rem;
   text-transform: uppercase;

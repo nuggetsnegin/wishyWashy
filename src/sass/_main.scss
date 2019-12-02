@@ -232,6 +232,13 @@ footer {
   padding: 50px 60px;
   text-align: center;
 
+  img{
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+  }
+
   h2{
     font-size: 3rem;
     text-transform: uppercase;
