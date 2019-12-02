@@ -847,8 +847,7 @@ h1:after {
     /*inconcistent on mobile*/
   }
   li {
-    max-height: 60px;
-    max-width: 60px;
+    padding: 30px 30px;
   }
   .x1 {
     -webkit-transform: scale(1);
