@@ -203,7 +203,7 @@ html {
 }
 
 span {
-  color: #319ec2;
+  color: #7dc3f9;
   font-size: 2.3rem;
 }
 
@@ -225,8 +225,8 @@ body {
 
 .App {
   min-height: 100vh;
-  background: -webkit-gradient(linear, left bottom, left top, from(#1a4d7c), to(#32292f));
-  background: linear-gradient(0deg, #1a4d7c, #32292f);
+  background: -webkit-gradient(linear, left bottom, left top, from(#1a4d7c), to(#1c1632));
+  background: linear-gradient(0deg, #1a4d7c, #1c1632);
   background-size: 400% 400%;
   -webkit-animation: background 30s ease infinite;
   animation: background 30s ease infinite;
@@ -327,7 +327,7 @@ textarea:focus {
   background-color: #191e47;
   padding: 15px;
   margin-bottom: 15px;
-  border: 1px solid #319ec2;
+  border: 1px solid #7dc3f9;
   border-radius: 25px;
 }
 
@@ -335,7 +335,7 @@ textarea:focus {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   cursor: pointer;
-  background: #319ec2 radial-gradient(circle, transparent 1%, #191e47 1%) center/15000%;
+  background: #7dc3f9 radial-gradient(circle, transparent 1%, #191e47 1%) center/15000%;
 }
 
 .wishButton:focus {
@@ -365,7 +365,7 @@ textarea:focus {
   /*for z-index*/
   text-align: center;
   width: 50%;
-  border: 1px solid #319ec2;
+  border: 1px solid #7dc3f9;
   background-color: #191e47;
   -webkit-box-shadow: 10px 10px #191e47;
           box-shadow: 10px 10px #191e47;
@@ -377,7 +377,7 @@ textarea:focus {
 }
 
 .introduction span {
-  color: #319ec2;
+  color: #7dc3f9;
 }
 
 /*WISH DISPLAY*/
@@ -396,7 +396,9 @@ ul {
 }
 
 li {
-  background-color: rgba(133, 196, 255, 0.445);
+  background-color: rgba(133, 196, 255, 0.5);
+  -webkit-box-shadow: -2px -1px 123px -33px rgba(225, 225, 247, 0.3);
+  box-shadow: -2px -1px 123px -33px rgba(225, 225, 247, 0.3);
   font-size: 1.8rem;
   text-align: center;
   padding: 50px 40px;
@@ -440,19 +442,21 @@ footer p {
 
 /*ERROR*/
 .errorMessage {
-  background-color: #319ec2;
-  border-radius: 20px;
+  background-color: #1c2e68;
+  border-radius: 25px;
   position: absolute;
   -webkit-box-shadow: 10px 10px #191e47;
           box-shadow: 10px 10px #191e47;
   font-size: 2rem;
-  color: #191e47;
+  color: #f9f5ff;
   z-index: 4;
-  padding: 50px 60px;
+  padding: 20px 100px;
+  padding-bottom: 0;
   text-align: center;
 }
 
 .errorMessage img {
+  padding-top: 5px;
   display: block;
   margin: 0 auto;
   width: 80px;
@@ -460,7 +464,8 @@ footer p {
 }
 
 .errorMessage h2 {
-  font-size: 3rem;
+  font-size: 5rem;
+  text-shadow: 2px 2px #191e47;
   text-transform: uppercase;
   margin: 0;
 }
@@ -472,8 +477,8 @@ footer p {
 
 .errorMessage button {
   background-color: #f9f5ff;
-  color: #28262c;
-  padding: 20px;
+  color: #1c2e68;
+  padding: 10px;
   border-radius: 25px;
   text-transform: uppercase;
   border: 2px solid #191e47;
@@ -507,6 +512,7 @@ h1 {
   color: #ececf6;
   font-size: 12rem;
   margin: 0;
+  text-shadow: 1px 1px #d5f6f8;
 }
 
 h1:after {
@@ -848,6 +854,7 @@ h1:after {
 @media (max-width: 1060px) {
   h1 {
     font-size: 10rem;
+    text-shadow: 2px 2px #2c9ea4;
   }
   h1:after {
     display: none;

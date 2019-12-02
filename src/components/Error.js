@@ -7,8 +7,8 @@ class Error extends Component {
     return (
         <div className="errorMessage wobbleBottom">
             <h2>Oops!</h2>
-            <p><span role='img' aria-label='fish emoji'>🐟</span>Can't have an empty wish!<span role='img' aria-label='fish emoji'>🐟</span></p>
-            <button className="agreeButton" onClick={this.props.closeError}>Okay!</button>
+            <p>Can't have an empty wish..</p>
+            <button className="agreeButton" onClick={this.props.closeError}>Okay</button>
             <img src={require('../assets/scubaCat.png')} alt="Illustration of a cat in scuba suit"></img>
         </div>
     );
