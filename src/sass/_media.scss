@@ -4,7 +4,7 @@
   }
 
   h1:after {
-    top: -8px;
+    display: none; /*inconcistent on mobile*/
   }
 
   li {

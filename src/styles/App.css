@@ -843,7 +843,7 @@ h1:after {
     font-size: 10rem;
   }
   h1:after {
-    top: -8px;
+    display: none;
   }
   li {
     max-height: 60px;
