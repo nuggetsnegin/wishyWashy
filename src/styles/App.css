@@ -844,6 +844,7 @@ h1:after {
   }
   h1:after {
     display: none;
+    /*inconcistent on mobile*/
   }
   li {
     max-height: 60px;
