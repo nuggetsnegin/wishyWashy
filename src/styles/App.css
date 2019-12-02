@@ -448,7 +448,7 @@ footer p {
   font-size: 2rem;
   color: #191e47;
   z-index: 4;
-  padding: 50px 45px;
+  padding: 50px 60px;
   text-align: center;
 }
 
@@ -496,7 +496,7 @@ footer p {
 h1 {
   display: inline;
   position: relative;
-  letter-spacing: -5px;
+  letter-spacing: -10px;
   color: #ececf6;
   font-size: 12rem;
   margin: 0;
@@ -506,7 +506,7 @@ h1:after {
   content: "Wishy Washy";
   position: absolute;
   left: 0px;
-  top: -10px;
+  top: -20px;
   color: rgba(29, 153, 255, 0.192);
 }
 
@@ -842,6 +842,9 @@ h1:after {
   h1 {
     font-size: 10rem;
   }
+  h1:after {
+    top: -8px;
+  }
   li {
     max-height: 60px;
     max-width: 60px;
@@ -893,19 +896,18 @@ h1:after {
 }
 
 @media (max-width: 650px) {
+  .App {
+    gap: 5px;
+  }
   header {
-    padding: 10px;
-    height: 5vh;
+    margin-top: 20px;
   }
   h1 {
     font-size: 8rem;
   }
   .introduction {
-    font-size: 2rem;
-    margin-top: 100px;
-  }
-  .inputContainer {
-    margin-top: 50px;
+    font-size: 1.7rem;
+    margin-top: 20px;
   }
   textarea {
     padding: 20px 30px;
@@ -915,7 +917,7 @@ h1:after {
 
 @media (max-width: 585px) {
   footer {
-    width: 80%;
+    width: 50%;
     margin: 0 auto;
   }
   .x1 {
@@ -977,5 +979,35 @@ h1:after {
   }
   footer {
     width: 80%;
+  }
+}
+
+@media (max-width: 390px) {
+  .introduction {
+    margin-top: 1px;
+  }
+  input {
+    width: 50%;
+  }
+  form {
+    width: 70%;
+    margin: 0 auto;
+  }
+  textarea {
+    padding: 10px 10px;
+    text-align: center;
+  }
+  .buttonWrapper p {
+    margin: 5px 0;
+    font-size: 1.8rem;
+  }
+  footer p {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    opacity: 1;
+    font-size: 1.5rem;
+  }
+  footer p span {
+    font-size: 1.6rem;
   }
 }
