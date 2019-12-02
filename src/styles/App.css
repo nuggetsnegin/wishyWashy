@@ -976,7 +976,7 @@ h1:after {
   }
 }
 
-@media (max-width: 475px) {
+@media (max-width: 492px) {
   h1 {
     font-size: 6.5rem;
   }
@@ -987,6 +987,11 @@ h1:after {
   .inputContainer {
     margin-top: 40px;
   }
+  .errorMessage {
+    -webkit-box-shadow: 5px 5px #191e47;
+            box-shadow: 5px 5px #191e47;
+    padding: 30px 58px;
+  }
   textarea {
     padding: 30px 10px;
     overflow: hidden;
@@ -996,7 +1001,7 @@ h1:after {
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 400px) {
   .introduction {
     margin-top: 1px;
   }
@@ -1014,6 +1019,9 @@ h1:after {
   .buttonWrapper p {
     margin: 5px 0;
     font-size: 1.8rem;
+  }
+  .errorMessage {
+    padding: 10px 20px;
   }
   footer p {
     background-color: rgba(255, 255, 255, 0.1);

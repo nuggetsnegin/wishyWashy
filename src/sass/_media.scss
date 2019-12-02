@@ -170,7 +170,7 @@
   }
 }
 
-@media (max-width: 475px) {
+@media (max-width: 492px) {
   h1 {
     font-size: 6.5rem;
   }
@@ -183,6 +183,11 @@
     margin-top: 40px;
   }
 
+  .errorMessage {
+    box-shadow: 5px 5px $accent-color;
+    padding: 30px 58px;
+  }
+
   textarea {
     padding: 30px 10px;
     overflow: hidden;
@@ -193,7 +198,7 @@
   }
 }
 
-@media(max-width: 390px){
+@media(max-width: 400px){
   .introduction{
     margin-top: 1px;
   }
@@ -213,6 +218,10 @@
       margin: 5px 0;
       font-size: 1.8rem;
     }
+  }
+
+  .errorMessage {
+    padding: 10px 20px;
   }
 
   footer p{
