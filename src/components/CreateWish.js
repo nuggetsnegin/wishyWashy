@@ -81,6 +81,7 @@ class CreateWish extends Component {
             <label htmlFor='wishInput' />
 
             <textarea
+              id='wishInput'
               rows='4'
               maxLength={120}
               type='text'
