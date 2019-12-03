@@ -75,31 +75,30 @@ class CreateWish extends Component {
   render() {
     return (
       <div className='inputContainer'>
-        {this.state.showError ? <Error closeError={this.toggleError} /> : null} 
+        {this.state.showError ? <Error closeError={this.toggleError} /> : null}
         <div className='input'>
           <form onSubmit={this.handleSubmit}>
-            <label htmlFor='wishInput' />
+            <label htmlFor='wishInput' className='visuallyHidden'>Wish Input</label>
+              <textarea
+                id='wishInput'
+                rows='4'
+                maxLength={120}
+                type='text'
+                value={this.state.wishInput}
+                onChange={this.handleInput}
+                placeholder='I wish I could own 3 cats someday!'
+              />
+              <div className='buttonWrapper'>
+                <p>Wish Words Remaining: {this.state.wishInput.length}/120</p>
 
-            <textarea
-              id='wishInput'
-              rows='4'
-              maxLength={120}
-              type='text'
-              value={this.state.wishInput}
-              onChange={this.handleInput}
-              placeholder='I wish I could own 3 cats someday!'
-            />
-            <div className='buttonWrapper'>
-              <p>Wish Words Remaining: {this.state.wishInput.length}/120</p>
-
-              <button
-                className='wishButton ripple'
-                type='submit'
-                disabled={!this.state.wishInput || this.state.showError}
-              >
-                Submit Wish
-              </button>
-            </div>
+                <button
+                  className='wishButton ripple'
+                  type='submit'
+                  disabled={!this.state.wishInput || this.state.showError}
+                >
+                  Submit Wish
+                </button>
+              </div>
           </form>
         </div>
       </div>
