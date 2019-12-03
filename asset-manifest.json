@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/wishyWashy/static/css/main.d0d1c4ca.chunk.css",
-    "main.js": "/wishyWashy/static/js/main.d64c3337.chunk.js",
-    "main.js.map": "/wishyWashy/static/js/main.d64c3337.chunk.js.map",
+    "main.css": "/wishyWashy/static/css/main.1b21efcd.chunk.css",
+    "main.js": "/wishyWashy/static/js/main.a1560074.chunk.js",
+    "main.js.map": "/wishyWashy/static/js/main.a1560074.chunk.js.map",
     "runtime-main.js": "/wishyWashy/static/js/runtime-main.b5eb226b.js",
     "runtime-main.js.map": "/wishyWashy/static/js/runtime-main.b5eb226b.js.map",
-    "static/js/2.4589eba2.chunk.js": "/wishyWashy/static/js/2.4589eba2.chunk.js",
-    "static/js/2.4589eba2.chunk.js.map": "/wishyWashy/static/js/2.4589eba2.chunk.js.map",
+    "static/js/2.f5cc86ce.chunk.js": "/wishyWashy/static/js/2.f5cc86ce.chunk.js",
+    "static/js/2.f5cc86ce.chunk.js.map": "/wishyWashy/static/js/2.f5cc86ce.chunk.js.map",
     "index.html": "/wishyWashy/index.html",
-    "precache-manifest.fbdd683698f3dc18443a1e3b417669b0.js": "/wishyWashy/precache-manifest.fbdd683698f3dc18443a1e3b417669b0.js",
+    "precache-manifest.df1eedad33edac1b8e7db0150b43857a.js": "/wishyWashy/precache-manifest.df1eedad33edac1b8e7db0150b43857a.js",
     "service-worker.js": "/wishyWashy/service-worker.js",
-    "static/css/main.d0d1c4ca.chunk.css.map": "/wishyWashy/static/css/main.d0d1c4ca.chunk.css.map"
+    "static/css/main.1b21efcd.chunk.css.map": "/wishyWashy/static/css/main.1b21efcd.chunk.css.map",
+    "static/media/scubaCat.png": "/wishyWashy/static/media/scubaCat.81f37c87.png"
   },
   "entrypoints": [
     "static/js/runtime-main.b5eb226b.js",
-    "static/js/2.4589eba2.chunk.js",
-    "static/css/main.d0d1c4ca.chunk.css",
-    "static/js/main.d64c3337.chunk.js"
+    "static/js/2.f5cc86ce.chunk.js",
+    "static/css/main.1b21efcd.chunk.css",
+    "static/js/main.a1560074.chunk.js"
   ]
 }
