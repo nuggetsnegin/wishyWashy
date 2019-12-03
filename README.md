@@ -1,5 +1,6 @@
 # Wishy Washy
-A wholesome inspired wish board. User's can input a wish anonymously and show their support for other wishes' by hitting the heart button! (also features bad word censoring..!)
+![WishyWashy](https://i.imgur.com/TEqJuC0.png)
+A wholesome wishing board. User's can input a wish anonymously and show their support for other wishes' by hitting the heart button! (also features bad word censoring..!)
 
 ## Built With
 
