@@ -1,5 +1,5 @@
 
-![WishyWashy](https://i.imgur.com/PtDe7bB.png)
+![WishyWashy](https://i.imgur.com/TEqJuC0.png)
 # Wishy Washy
 A wholesome wishing board created in React. User's may input a wish anonymously which is stored into a database (Firebase) and show their support for other wishes by hitting the heart button! Most recent wish is always displayed on the left-hand side of the screen while 8 other wishes are randomized and re-renders on 'heart' or user input.
 
