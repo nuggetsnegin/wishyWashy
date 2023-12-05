@@ -8,7 +8,7 @@ class Footer extends Component {
           <span role='img' aria-label='fish emoji'>
             🐟
           </span>{" "}
-          Made with big wishes by <span>Negin Sauermann</span> 2019{" "}
+          Made with big wishes by <span>Negi</span> 2019{" "}
           <span role='img' aria-label='fish emoji' className='ripple'>
             🐟
           </span>

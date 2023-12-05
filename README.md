@@ -26,4 +26,4 @@ A wholesome wishing board created in React. User's may input a wish anonymously 
 
 ## Authors
 
-* **Negin Melina Sauermann** - [nuggetsnegin](https://github.com/nuggetsnegin)
+* **Negi** - [nuggetsnegin](https://github.com/nuggetsnegin)
